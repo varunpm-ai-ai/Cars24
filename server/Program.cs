@@ -12,6 +12,7 @@ builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<CarService>();
 builder.Services.AddSingleton<BookingService>();
 builder.Services.AddSingleton<AppointmentService>();
+builder.Services.AddSingleton<MaintenanceService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

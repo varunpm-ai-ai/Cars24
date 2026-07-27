@@ -25,6 +25,7 @@ const Header = () => {
   const navItems = [
     { name: "Buy used car", href: "/buy-car" },
     { name: "Sell car", href: "/sell-car" },
+    { name: "Maintenance Estimator", href: "/maintenance-estimator" },
     { name: "Car finance", href: "/finance" },
     { name: "New cars", href: "/new-cars" },
     { name: "Car services", href: "/services" },

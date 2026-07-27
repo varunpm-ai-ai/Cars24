@@ -16,6 +16,8 @@ import {
 import { useRouter, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { MaintenanceCard } from "@/components/maintenance/MaintenanceCard";
+import { getMaintenanceEstimateForCar, MaintenanceEstimateResult } from "@/lib/maintenanceApi";
 const carDetails = {
   id: "fronx-2023",
   title: "2023 Maruti FRONX DELTA PLUS 1.2L AGS",
@@ -66,6 +68,7 @@ const index = () => {
   const { id } = useParams<{ id: string }>();
   const { user } = useAuth();
   const [carDetails, setcarDetails] = useState<any>(null);
+  const [maintenanceEstimate, setMaintenanceEstimate] = useState<MaintenanceEstimateResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [step, setstep] = useState(1);
   useEffect(() => {
@@ -74,6 +77,16 @@ const index = () => {
       try {
         const data = await getcarByid(id as string);
         setcarDetails(data);
+        if (data) {
+          const est = await getMaintenanceEstimateForCar(id as string, {
+            brand: data.title || "Maruti",
+            model: data.title || "Car",
+            year: data.specs?.year || 2020,
+            km: data.specs?.km || "30000",
+            fuel: data.specs?.fuel || "Petrol",
+          });
+          setMaintenanceEstimate(est);
+        }
       } catch (error) {
         console.error(error);
       } finally {
@@ -223,13 +236,27 @@ const index = () => {
                 </ul>
               </div>
               {/* Features */}
-              <div className="bg-gray-100 p-4 rounded-lg">
+              <div className="bg-gray-100 p-4 rounded-lg mb-6">
                 <h3 className="font-semibold text-gray-800 mb-2">Features</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                   {carDetails.features.map((feature: any, index: any) => (
                     <li key={index}>{feature}</li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Maintenance Cost Estimator Section */}
+              <div className="mt-6">
+                <MaintenanceCard
+                  initialEstimate={maintenanceEstimate || undefined}
+                  carTitle={carDetails.title}
+                  brand={carDetails.title || "Maruti"}
+                  model={carDetails.title || "Car"}
+                  year={carDetails.specs?.year || 2020}
+                  km={carDetails.specs?.km || 30000}
+                  fuel={carDetails.specs?.fuel || "Petrol"}
+                  showCustomizer={true}
+                />
               </div>
             </div>
             {/* booking form  */}
