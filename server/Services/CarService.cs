@@ -19,8 +19,11 @@ namespace server.Services
         {
             return await _cars.Find(u => u.Id == id).FirstOrDefaultAsync();
         }
+        public async Task<List<Car>> GetByUserIdAsync(string userId) =>
+            await _cars.Find(c => c.UserId == userId).ToListAsync();
         public async Task CreateAsync(Car car) =>
             await _cars.InsertOneAsync(car);
+        public async Task DeleteAsync(string id) =>
+            await _cars.DeleteOneAsync(c => c.Id == id);
     }
-
 }

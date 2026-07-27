@@ -17,9 +17,17 @@ public class Car
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
+
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? UserId { get; set; }
+    public string SellerName { get; set; } = string.Empty;
+
     public List<string> Images { get; set; } = new List<string>();
     public string Title { get; set; } = string.Empty;
     public string Price { get; set; } = string.Empty;
+    public double BasePriceNumeric { get; set; }
+    public double RecommendedPriceNumeric { get; set; }
+    public string BodyType { get; set; } = "SUV"; // SUV, Hatchback, Sedan, MUV, EV, Luxury
     public string Emi { get; set; } = string.Empty;
     public string Location { get; set; } = string.Empty;
     public Specs Specs { get; set; } = new Specs();
