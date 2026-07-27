@@ -23,6 +23,7 @@ Thumbs.db
 **/server/*.user
 **/server/.vs/
 **/server/.idea/
+server/Firebase/serviceAccount.json
 
 # Docker
 **/docker-compose.override.yml
