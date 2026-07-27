@@ -25,11 +25,12 @@ public class User
     public string Phone { get; set; } = string.Empty;
 
     [BsonRepresentation(BsonType.ObjectId)]
-
     public List<string> BookingId { get; set; } = new List<string>();
 
     [BsonRepresentation(BsonType.ObjectId)]
-
     public List<string> AppointmentId { get; set; } = new List<string>();
 
+    public List<string> FcmTokens { get; set; } = new List<string>();
+
+    public NotificationPreferences Preferences { get; set; } = new NotificationPreferences();
 }

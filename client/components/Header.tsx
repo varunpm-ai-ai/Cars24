@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NotificationCenter } from "./NotificationCenter";
 import {
   Car,
   Calendar,
@@ -10,6 +11,7 @@ import {
   Heart,
   User,
   ChevronDown,
+  Bell,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -32,20 +34,13 @@ const Header = () => {
   const menuItems = [
     { label: "My Appointments", icon: Calendar, link: "/appointments" },
     { label: "My Bookings", icon: Package, link: "/bookings" },
+    { label: "Notification Settings", icon: Bell, link: "/profile/notifications" },
     { label: "My Orders", icon: FileText, link: "/orders" },
     { label: "Resources", icon: FileText, link: "/resources" },
     { label: "RC Transfer Status", icon: FileText, link: "/rc-transfer" },
     { label: "Become Our Partner", icon: Users, link: "/partner" },
     { label: "FAQ", icon: HelpCircle, link: "/faq" },
   ];
-  // const user = {
-  //   id: "1",
-  //   avatar_url: "https://github.com/shadcn.png",
-  //   email: "giris@gmail.com",
-  //   full_name: "John Doe",
-  //   phone: "+1234567890",
-  //   created_at: new Date().toISOString(),
-  // };
   const { user, signOut } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
@@ -88,7 +83,7 @@ const Header = () => {
             </div>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center space-x-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center space-x-3">
           <Button
             variant="ghost"
             size="sm"
@@ -97,6 +92,8 @@ const Header = () => {
             <Heart className="mr-1 h-4 w-4" />
             <span>Wishlist</span>
           </Button>
+
+          <NotificationCenter />
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Button

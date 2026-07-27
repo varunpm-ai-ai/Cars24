@@ -12,16 +12,19 @@ namespace server.Controllers
         private readonly AppointmentService _appointmentService;
         private readonly UserService _userService;
         private readonly CarService _carService;
+        private readonly NotificationService _notificationService;
+
         public class AppointmentDto
         {
             public required Appointment Appointment { get; set; }
             public Car? Car { get; set; }
         }
-        public AppointmentController(AppointmentService appointmentService, UserService userService, CarService carService)
+        public AppointmentController(AppointmentService appointmentService, UserService userService, CarService carService, NotificationService notificationService)
         {
             _appointmentService = appointmentService;
             _userService = userService;
             _carService = carService;
+            _notificationService = notificationService;
         }
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromQuery] string userId, [FromBody] Appointment appointment)
@@ -33,14 +36,33 @@ namespace server.Controllers
 
             await _appointmentService.CreateAsync(appointment);
             var user = await _userService.GetByIdAsync(userId);
-            if (user == null)
+            if (user == null || string.IsNullOrEmpty(user.Id))
                 return NotFound("User not found");
             if (user.AppointmentId == null)
             {
                 user.AppointmentId = new List<string>();
             }
-            user.AppointmentId.Add(appointment.Id);
+            if (!string.IsNullOrEmpty(appointment.Id))
+            {
+                user.AppointmentId.Add(appointment.Id);
+            }
             await _userService.UpdateAsync(user.Id, user);
+
+            var car = !string.IsNullOrEmpty(appointment.CarId) ? await _carService.GetByIdAsync(appointment.CarId) : null;
+            string carTitle = car != null ? car.Title : "your selected car";
+
+            await _notificationService.SendNotificationAsync(
+                userId,
+                "appointment_confirmation",
+                "Appointment Confirmed! 📅",
+                $"Your appointment for {carTitle} on {appointment.ScheduledDate} at {appointment.ScheduledTime} is confirmed.",
+                new Dictionary<string, string>
+                {
+                    { "appointmentId", appointment.Id ?? "" },
+                    { "carId", appointment.CarId ?? "" }
+                }
+            );
+
             return CreatedAtAction(nameof(GetAppointmentById), new { id = appointment.Id }, appointment);
         }
         [HttpGet("{id}")]
