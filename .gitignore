@@ -7,6 +7,9 @@
 # VSCode
 .vscode/
 
+#utils
+Cars24DB.Cars.json
+
 # Logs
 *.log
 **/logs/
