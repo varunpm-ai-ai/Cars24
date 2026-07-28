@@ -24,6 +24,7 @@ Thumbs.db
 **/server/.vs/
 **/server/.idea/
 **/server/appsettings.json
+C:\Web Development\Cars24\server\appsettings.json
 
 # Docker
 **/docker-compose.override.yml

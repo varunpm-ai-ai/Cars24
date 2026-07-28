@@ -24,6 +24,8 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 
+app.UseCors("AllowAll");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -45,7 +47,6 @@ app.MapGet("/db-check", async () =>
         return Results.Problem($"Mongodb connection failed:{ex.Message}");
     }
 });
-app.UseCors("AllowAll");
 app.MapControllers();
 
 app.Run();

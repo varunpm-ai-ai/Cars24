@@ -137,8 +137,13 @@ const index = () => {
   const [cars, setCars] = useState<Car[] | null>(null);
   useEffect(() => {
     const fetchCars = async () => {
-      const car = await getcarSummaries();
-      setCars(car);
+      try {
+        const car = await getcarSummaries();
+        setCars(car || []);
+      } catch (err) {
+        console.error("Failed to load car summaries:", err);
+        setCars([]);
+      }
     };
     fetchCars();
   }, []);

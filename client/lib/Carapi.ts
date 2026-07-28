@@ -32,6 +32,16 @@ export const getcarByid = async (id: string) => {
   return response.json();
 };
 export const getcarSummaries = async () => {
-  const response = await fetch(`${BASE_URL}/summaries`);
-  return response.json();
+  try {
+    const response = await fetch(`${BASE_URL}/summaries`);
+    if (!response.ok) {
+      console.error(`Failed to fetch car summaries: ${response.status} ${response.statusText}`);
+      return [];
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching car summaries:", error);
+    return [];
+  }
 };
+
