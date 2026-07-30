@@ -85,10 +85,11 @@ const Hero = () => {
                 type="button"
                 onClick={openLocationDrawer}
                 className="w-full sm:w-auto px-4 py-3 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200/80 rounded-2xl text-xs font-bold transition-all flex items-center justify-center space-x-2 shrink-0 shadow-xs"
+                title="Click to set city or detect GPS location"
               >
                 <span>{selectedPreset.icon}</span>
-                <span className="truncate max-w-[140px]">{selectedPreset.cityName}</span>
-                <TrendingUp className="w-3.5 h-3.5 text-blue-600 ml-1" />
+                <span className="truncate max-w-[140px]">City: {selectedPreset.cityName}</span>
+                <MapPin className="w-3.5 h-3.5 text-blue-600 ml-1" />
               </button>
 
               {/* Submit button */}

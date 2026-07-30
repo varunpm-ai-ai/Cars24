@@ -7,6 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import { getcarSummaries } from "@/lib/Carapi";
 import { useLocation } from "@/context/LocationContext";
 import { useAuth } from "@/context/AuthContext";
+import { InteractiveLocationMap } from "@/components/location/InteractiveLocationMap";
 import {
   ChevronDown,
   Heart,
@@ -17,6 +18,10 @@ import {
   Sparkles,
   Zap,
   Lock,
+  Shield,
+  Navigation,
+  CheckCircle2,
+  Globe,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -105,6 +110,48 @@ const mockCarsList = [
     location: "Noida Sector 63, Uttar Pradesh",
     image: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
   },
+  {
+    id: "kia-sonet-2023",
+    title: "2023 Kia Sonet GTX+",
+    km: "15,400 km",
+    fuel: "Petrol",
+    transmission: "Auto",
+    owner: "1st owner",
+    emi: "₹22,900/m",
+    price: "₹13.80 lakh",
+    basePriceNumeric: 1380000,
+    bodyType: "SUV",
+    location: "Andheri West, Mumbai",
+    image: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+  },
+  {
+    id: "thar-2022",
+    title: "2022 Mahindra Thar LX 4x4",
+    km: "18,200 km",
+    fuel: "Diesel",
+    transmission: "Manual",
+    owner: "1st owner",
+    emi: "₹23,500/m",
+    price: "₹14.50 lakh",
+    basePriceNumeric: 1450000,
+    bodyType: "SUV",
+    location: "Mall Road Zone, Manali",
+    image: "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg",
+  },
+  {
+    id: "nexon-ev-2023",
+    title: "2023 Tata Nexon EV Max Lux",
+    km: "14,100 km",
+    fuel: "Electric",
+    transmission: "Auto",
+    owner: "1st owner",
+    emi: "₹24,100/m",
+    price: "₹14.90 lakh",
+    basePriceNumeric: 1490000,
+    bodyType: "EV",
+    location: "Whitefield, Bengaluru",
+    image: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
+  },
 ];
 
 interface CarCardItem {
@@ -138,7 +185,16 @@ function LoaderCard() {
 
 export default function BuyCarPage() {
   const { user, openAuthModal } = useAuth();
-  const { selectedPreset, openLocationDrawer, getPriceRecommendation } = useLocation();
+  const {
+    selectedPreset,
+    openLocationDrawer,
+    getPriceRecommendation,
+    isGeoFenceActive,
+    toggleGeoFence,
+    isCarInGeoFence,
+    detectUserLocation,
+    isDetectingLocation,
+  } = useLocation();
 
   const [priceRange, setPriceRange] = useState<number[]>([0, 1500000]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
@@ -161,8 +217,10 @@ export default function BuyCarPage() {
     fetchCars();
   }, []);
 
-  // Filter cars based on brand & search query
+  // Filter cars based on Geo-fence, brand & search query
   const filteredCars = (cars || []).filter((car) => {
+    const matchesGeoFence = isCarInGeoFence(car.location);
+
     const matchesSearch =
       !searchQuery ||
       car.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -174,7 +232,7 @@ export default function BuyCarPage() {
         car.title.toLowerCase().includes(brand.toLowerCase())
       );
 
-    return matchesSearch && matchesBrand;
+    return matchesGeoFence && matchesSearch && matchesBrand;
   });
 
   return (
@@ -185,27 +243,80 @@ export default function BuyCarPage() {
           <div>
             <div className="flex items-center space-x-2 text-xs font-bold text-orange-400 uppercase tracking-widest mb-1">
               <TrendingUp className="w-4 h-4" />
-              <span>Real-Time Dynamic Pricing Engine</span>
+              <span>Geo-Fenced Search & Dynamic Pricing Engine</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-black">
               Used Cars for Sale in {selectedPreset.cityName}
             </h1>
-            <p className="text-xs text-blue-200 mt-1">
+            <p className="text-xs text-blue-200 mt-1 max-w-2xl">
               {selectedPreset.description}
             </p>
           </div>
 
-          <button
-            onClick={openLocationDrawer}
-            className="self-start md:self-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-extrabold transition-all flex items-center space-x-2 shadow-xs"
-          >
-            <span>{selectedPreset.icon} Market Region: {selectedPreset.cityName}</span>
-            <ChevronDown className="w-4 h-4" />
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={detectUserLocation}
+              disabled={isDetectingLocation}
+              className="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-2 rounded-2xl text-xs font-black transition-all flex items-center space-x-1.5 shadow-sm active:scale-95 disabled:opacity-50"
+            >
+              <Navigation className={`w-3.5 h-3.5 ${isDetectingLocation ? "animate-spin" : ""}`} />
+              <span>{isDetectingLocation ? "Detecting..." : "Detect GPS"}</span>
+            </button>
+
+            <button
+              onClick={openLocationDrawer}
+              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-extrabold transition-all flex items-center space-x-2 shadow-xs"
+            >
+              <span>{selectedPreset.icon} City: {selectedPreset.cityName}</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        {/* Geo-Fence Status Banner */}
+        <div className="bg-white p-4 md:p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center space-x-3">
+            <div className={`w-10 h-10 rounded-2xl flex items-center justify-center font-bold shrink-0 ${isGeoFenceActive ? "bg-emerald-50 text-emerald-600 border border-emerald-200" : "bg-gray-100 text-gray-500"}`}>
+              <Shield className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-black text-gray-900">
+                  Geo-Fence Filter: {isGeoFenceActive ? "Active" : "Disabled (All India)"}
+                </span>
+                {isGeoFenceActive && (
+                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    {selectedPreset.cityName}
+                  </span>
+                )}
+              </div>
+              <p className="text-xs text-gray-500 mt-0.5">
+                {isGeoFenceActive
+                  ? `Displaying verified listings strictly located in ${selectedPreset.cityName} and surrounding hub area.`
+                  : "Showing listings across all cities in India. Enable geo-fence to restrict search."}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3 shrink-0">
+            <button
+              type="button"
+              onClick={() => toggleGeoFence()}
+              className={`px-4 py-2 rounded-2xl text-xs font-black transition-all flex items-center space-x-2 ${
+                isGeoFenceActive
+                  ? "bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200"
+                  : "bg-gray-900 text-white hover:bg-gray-800"
+              }`}
+            >
+              {isGeoFenceActive ? <Shield className="w-3.5 h-3.5" /> : <Globe className="w-3.5 h-3.5" />}
+              <span>{isGeoFenceActive ? "Showing City Only" : "Showing All Cities"}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
           <div className="md:col-span-1 space-y-6">
@@ -241,7 +352,7 @@ export default function BuyCarPage() {
                   Popular Brands
                 </label>
                 <div className="space-y-2">
-                  {["Maruti", "Hyundai", "Honda", "Tata", "Toyota"].map((brand) => (
+                  {["Maruti", "Hyundai", "Honda", "Tata", "Toyota", "Kia", "Mahindra"].map((brand) => (
                     <label
                       key={brand}
                       className="flex items-center text-xs font-semibold text-gray-700 cursor-pointer hover:text-blue-600"
@@ -271,9 +382,16 @@ export default function BuyCarPage() {
           {/* Cars Grid */}
           <div className="md:col-span-3 space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <h2 className="text-xl font-black text-gray-900">
-                Available Cars ({filteredCars.length})
-              </h2>
+              <div>
+                <h2 className="text-xl font-black text-gray-900">
+                  Available Cars ({filteredCars.length})
+                </h2>
+                {isGeoFenceActive && (
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Restricted to {selectedPreset.cityName} geo-fence
+                  </p>
+                )}
+              </div>
 
               <div className="flex items-center space-x-3">
                 <div className="relative flex-1 sm:w-64">
@@ -294,10 +412,25 @@ export default function BuyCarPage() {
               {cars === null ? (
                 Array.from({ length: 6 }).map((_, idx) => <LoaderCard key={idx} />)
               ) : filteredCars.length === 0 ? (
-                <div className="col-span-full bg-white rounded-3xl p-12 text-center border border-gray-100">
-                  <p className="text-sm font-bold text-gray-600">
-                    No cars match your search filter.
-                  </p>
+                <div className="col-span-full bg-white rounded-3xl p-12 text-center border border-gray-100 space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-black text-gray-900">
+                      No cars match your search filter in {selectedPreset.cityName}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Try expanding your geo-fence to all cities or change your selected city.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => toggleGeoFence(false)}
+                    className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs rounded-2xl shadow-md transition-all inline-flex items-center space-x-2"
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>View Cars Across All Cities</span>
+                  </button>
                 </div>
               ) : (
                 filteredCars.map((car) => {
@@ -316,6 +449,9 @@ export default function BuyCarPage() {
             </div>
           </div>
         </div>
+
+        {/* Interactive Google Map Section for Cars24 Hubs */}
+        <InteractiveLocationMap />
       </div>
     </div>
   );
@@ -377,12 +513,10 @@ function CarCard({
             <Heart className="h-4 w-4" />
           </button>
 
-          {!user && (
-            <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full flex items-center space-x-1">
-              <Lock className="w-3 h-3 text-amber-400" />
-              <span>Login Required for Specs</span>
-            </div>
-          )}
+          <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center space-x-1">
+            <MapPin className="w-3 h-3 text-blue-400" />
+            <span className="max-w-[150px] truncate">{car.location || selectedPreset.cityName}</span>
+          </div>
         </div>
 
         <div className="p-5 space-y-3">

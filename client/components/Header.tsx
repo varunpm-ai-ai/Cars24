@@ -49,7 +49,7 @@ const Header = () => {
   ];
 
   const { user, signOut, openAuthModal } = useAuth();
-  const { selectedPreset, openLocationDrawer } = useLocation();
+  const { selectedPreset, openLocationDrawer, isGeoFenceActive } = useLocation();
   const [sandwichBarOpen, setSandwichBarOpen] = useState(false);
 
   return (
@@ -59,24 +59,18 @@ const Header = () => {
           className="mx-auto flex max-w-7xl items-center justify-between p-3.5 lg:px-8"
           aria-label="Global"
         >
-          {/* Left: Sandwich Bar Trigger & Brand Logo */}
+          {/* Left: Mobile Menu & Logo */}
           <div className="flex items-center space-x-3 lg:flex-1">
             <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-xl text-gray-700 hover:bg-gray-100 focus:outline-none transition-colors"
               onClick={() => setSandwichBarOpen(true)}
-              title="Open Navigation Menu"
+              className="lg:hidden p-2 text-gray-700 hover:text-blue-600 focus:outline-none"
             >
-              <Menu className="h-6 w-6 text-gray-800" aria-hidden="true" />
+              <Menu className="h-6 w-6" />
             </button>
-
-            <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-1">
-              <span className="sr-only">Cars24</span>
-              <div className="flex items-center">
-                <span className="bg-blue-600 text-white font-black py-1 px-2.5 rounded-lg text-lg tracking-wider">
-                  CARS
-                </span>
-                <span className="text-orange-500 font-black text-xl ml-0.5">24</span>
+            <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5 font-black text-2xl tracking-tighter text-blue-600">
+                <Car className="h-7 w-7 text-orange-500 fill-orange-500" />
+                <span>CARS<span className="text-orange-500">24</span></span>
               </div>
             </Link>
           </div>
@@ -107,6 +101,9 @@ const Header = () => {
               <span className="hidden sm:inline-block max-w-[120px] truncate">
                 {selectedPreset.cityName.split("/")[0]}
               </span>
+              {isGeoFenceActive && (
+                <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-200 animate-pulse" title="Geo-fence Active" />
+              )}
               <ChevronDown className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             </button>
 
