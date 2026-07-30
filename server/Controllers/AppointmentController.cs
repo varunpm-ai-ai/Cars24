@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using server.Models;
 using server.Services;
 
-
 namespace server.Controllers
 {
     [ApiController]
@@ -12,17 +11,26 @@ namespace server.Controllers
         private readonly AppointmentService _appointmentService;
         private readonly UserService _userService;
         private readonly CarService _carService;
+        private readonly ReferralService _referralService;
+
         public class AppointmentDto
         {
             public required Appointment Appointment { get; set; }
             public Car? Car { get; set; }
         }
-        public AppointmentController(AppointmentService appointmentService, UserService userService, CarService carService)
+
+        public AppointmentController(
+            AppointmentService appointmentService,
+            UserService userService,
+            CarService carService,
+            ReferralService referralService)
         {
             _appointmentService = appointmentService;
             _userService = userService;
             _carService = carService;
+            _referralService = referralService;
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromQuery] string userId, [FromBody] Appointment appointment)
         {
@@ -39,10 +47,15 @@ namespace server.Controllers
             {
                 user.AppointmentId = new List<string>();
             }
-            user.AppointmentId.Add(appointment.Id);
-            await _userService.UpdateAsync(user.Id, user);
+            user.AppointmentId.Add(appointment.Id!);
+            await _userService.UpdateAsync(user.Id!, user);
+
+            // Reward referrer & referee for completing a sale valuation appointment
+            await _referralService.ProcessSaleReferralRewardAsync(userId, appointment.Id!);
+
             return CreatedAtAction(nameof(GetAppointmentById), new { id = appointment.Id }, appointment);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAppointmentById(string id)
         {
@@ -51,6 +64,7 @@ namespace server.Controllers
                 return NotFound();
             return Ok(appointment);
         }
+
         [HttpGet("user/{userId}/appointments")]
         public async Task<IActionResult> GetAppointmentByUserId(string userId)
         {
@@ -58,17 +72,20 @@ namespace server.Controllers
             if (user == null)
                 return NotFound();
             var results = new List<AppointmentDto>();
-            foreach (var appointmentid in user.AppointmentId)
+            if (user.AppointmentId != null)
             {
-                var appointment = await _appointmentService.GetByIdAsynch(appointmentid);
-                if (appointment != null)
+                foreach (var appointmentid in user.AppointmentId)
                 {
-                    var car = await _carService.GetByIdAsync(appointment.CarId);
-                    results.Add(new AppointmentDto
+                    var appointment = await _appointmentService.GetByIdAsynch(appointmentid);
+                    if (appointment != null)
                     {
-                        Appointment = appointment,
-                        Car = car
-                    });
+                        var car = await _carService.GetByIdAsync(appointment.CarId);
+                        results.Add(new AppointmentDto
+                        {
+                            Appointment = appointment,
+                            Car = car
+                        });
+                    }
                 }
             }
             return Ok(results);

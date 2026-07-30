@@ -17,12 +17,23 @@ namespace server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
-            var car = await _carservice.GetByIdAsync(id);
-            if (car == null)
+            try
+            {
+                var car = await _carservice.GetByIdAsync(id);
+                if (car == null)
+                {
+                    return NotFound();
+                }
+                return Ok(car);
+            }
+            catch (FormatException)
             {
                 return NotFound();
             }
-            return Ok(car);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
         [HttpGet("summaries")]
         public async Task<IActionResult> GetCarsummaries()

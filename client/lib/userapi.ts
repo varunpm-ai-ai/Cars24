@@ -1,9 +1,10 @@
-const BASE_URL = "https://cars24-iq0g.onrender.com/api/UserAuth";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://cars24-iq0g.onrender.com/api";
+const BASE_URL = `${API_BASE}/UserAuth`;
 
 export const signup = async (
   email: string,
   password: string,
-  userData: { fullName: string; phone: string }
+  userData: { fullName: string; phone: string; tenantId?: string; referralCode?: string }
 ) => {
   const response = await fetch(`${BASE_URL}/signup`, {
     method: "POST",
@@ -13,7 +14,8 @@ export const signup = async (
     body: JSON.stringify({ email, password, ...userData }),
   });
   if (!response.ok) {
-    throw new Error("Failed to sign up");
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.message || "Failed to sign up");
   }
   return response.json();
 };
@@ -27,7 +29,8 @@ export const login = async (email: string, password: string) => {
     body: JSON.stringify({ email, password }),
   });
   if (!response.ok) {
-    throw new Error("Failed to login");
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.message || "Failed to login");
   }
   return response.json();
 };

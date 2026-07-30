@@ -6,6 +6,7 @@ import { useLocation } from "@/context/LocationContext";
 import { createBooking } from "@/lib/Bookingapi";
 import { getcarByid } from "@/lib/Carapi";
 import { PricingResult } from "@/lib/Pricingapi";
+import { getUserWallet, previewRedemption, WalletSummary, RedemptionPreview } from "@/lib/walletapi";
 import {
   AlertCircle,
   Calendar,
@@ -23,6 +24,8 @@ import {
   Info,
   CheckCircle2,
   ChevronRight,
+  Gift,
+  Wallet,
 } from "lucide-react";
 import { useRouter, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -51,6 +54,12 @@ const CarDetailsPage = () => {
   const [step, setStep] = useState(1);
   const [pricingResult, setPricingResult] = useState<PricingResult | null>(null);
 
+  // Wallet redemption states
+  const [walletSummary, setWalletSummary] = useState<WalletSummary | null>(null);
+  const [redeemPoints, setRedeemPoints] = useState<boolean>(false);
+  const [pointsInput, setPointsInput] = useState<number>(0);
+  const [redemptionPreview, setRedemptionPreview] = useState<RedemptionPreview | null>(null);
+
   useEffect(() => {
     if (user) {
       setFormData((prev) => ({
@@ -59,66 +68,79 @@ const CarDetailsPage = () => {
         email: user.email || "",
         phone: user.phone || "",
       }));
+
+      // Fetch user's wallet
+      getUserWallet(user.id)
+        .then((w) => {
+          setWalletSummary(w);
+          if (w.currentBalance >= w.tenantConfig.minRedeemPoints) {
+            setPointsInput(Math.min(w.currentBalance, 500));
+          }
+        })
+        .catch(() => {});
     }
   }, [user]);
 
   useEffect(() => {
     if (!id) return;
     async function fetchCar() {
+      setLoading(true);
       try {
         const data = await getcarByid(id as string);
         if (data) {
           setCarDetails(data);
-        } else {
-          // Fallback mock details if backend ID not found
-          setCarDetails({
-            id: id,
-            title: "2023 Maruti FRONX DELTA PLUS 1.2L AGS",
-            images: [
-              "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-              "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-              "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg",
-            ],
-            price: "₹7,80,000",
-            basePriceNumeric: 780000,
-            bodyType: "SUV",
-            emi: "₹15,245/month",
-            location: selectedPreset.cityName,
-            specs: {
-              year: 2023,
-              km: "10,048 km",
-              fuel: "Petrol",
-              transmission: "Automatic",
-              owner: "1st owner",
-              insurance: "Valid till 2026",
-            },
-            features: [
-              "Power Steering",
-              "Power Windows",
-              "Automatic Climate Control",
-              "Dual Airbags",
-              "ABS with EBD",
-              "Alloy Wheels",
-              "Touchscreen Infotainment",
-            ],
-            highlights: [
-              "Single owner non-accidental vehicle",
-              "140-point inspection certified by Cars24",
-              "7-day money-back guarantee",
-              "1-year warranty coverage",
-            ],
-          });
+          setLoading(false);
+          return;
         }
       } catch (error) {
-        console.error("Error fetching car:", error);
-      } finally {
-        setLoading(false);
+        console.warn("Error fetching car, using fallback:", error);
       }
+
+      // Default fallback if backend is offline or car is not in DB
+      const fallbackVenue = {
+        id: id,
+        title: "2022 Hyundai Venue SX",
+        images: [
+          "https://images10.gaadi.com/usedcar_image/4896245/original/157588ab532633b17c874f06b8177fa7.JPG",
+          "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+        ],
+        price: "₹10.40 lakh",
+        basePriceNumeric: 1040000,
+        bodyType: "SUV",
+        emi: "₹17,200/m",
+        location: selectedPreset?.cityName || "Bengaluru",
+        specs: {
+          year: 2022,
+          km: "18,400 km",
+          fuel: "Petrol",
+          transmission: "Manual",
+          owner: "1st Owner",
+          insurance: "Valid",
+        },
+        features: [
+          "Power Steering",
+          "Power Windows",
+          "Automatic Climate Control",
+          "Dual Airbags",
+          "ABS with EBD",
+          "Alloy Wheels",
+          "Touchscreen Infotainment",
+        ],
+        highlights: [
+          "Single owner non-accidental vehicle",
+          "140-point inspection certified by Cars24",
+          "7-day money-back guarantee",
+          "1-year warranty coverage",
+        ],
+      };
+
+      setCarDetails(fallbackVenue);
+      setLoading(false);
     }
     fetchCar();
   }, [id, selectedPreset.cityName]);
 
-  // Recalculate dynamic pricing whenever car details or location preset changes
+  // Recalculate dynamic pricing
   useEffect(() => {
     if (!carDetails) return;
 
@@ -141,6 +163,26 @@ const CarDetailsPage = () => {
     }
     computePricing();
   }, [carDetails, selectedPreset, season, isFuelSpikeActive, getPriceRecommendation]);
+
+  // Handle redemption preview
+  useEffect(() => {
+    if (!user || !redeemPoints || pointsInput <= 0 || !carDetails) {
+      setRedemptionPreview(null);
+      return;
+    }
+
+    const price = pricingResult?.recommendedPrice || carDetails.basePriceNumeric || 780000;
+    const timer = setTimeout(async () => {
+      try {
+        const preview = await previewRedemption(user.id, pointsInput, price);
+        setRedemptionPreview(preview);
+      } catch {
+        setRedemptionPreview(null);
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [user, redeemPoints, pointsInput, carDetails, pricingResult]);
 
   if (loading) {
     return (
@@ -187,18 +229,19 @@ const CarDetailsPage = () => {
         paymentMethod: formData.paymentMethod,
         loanRequired: formData.loanRequired,
         downPayment: formData.downPayment,
+        pointsRedeemed: redeemPoints ? pointsInput : 0,
       };
       const response = await createBooking(user.id, booking);
       if (response?.id) {
-        toast.success("Test drive & car booking reserved successfully!");
+        toast.success("Test drive & car booking reserved successfully with referral points!");
         router.push(`/bookings`);
       } else {
         toast.success("Booking submitted!");
         router.push(`/bookings`);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      toast.error("Failed to submit booking.");
+      toast.error(error?.message || "Failed to submit booking.");
     }
   };
 
@@ -237,7 +280,6 @@ const CarDetailsPage = () => {
             </p>
           </div>
 
-          {/* Location Switcher Pill */}
           <button
             onClick={openLocationDrawer}
             className="self-start md:self-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-bold transition-all flex items-center space-x-2"
@@ -251,7 +293,7 @@ const CarDetailsPage = () => {
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          {/* Main Car Overview & Specs Column (8 cols) */}
+          {/* Main Car Overview Column (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Gallery Card */}
@@ -296,43 +338,23 @@ const CarDetailsPage = () => {
                     <span>View Market Factors</span>
                   </button>
                 </div>
-
-                {/* Pricing Rationale Detail */}
-                {pricingResult && (
-                  <div className="mt-4 pt-3 border-t border-blue-100/60 text-xs text-blue-900 space-y-1.5">
-                    <p className="font-semibold flex items-center gap-1">
-                      <Info className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      {pricingResult.rationale}
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                      {pricingResult.breakdown.map((item, idx) => (
-                        <div key={idx} className="bg-white/80 p-2 rounded-lg border border-blue-100/80 text-[11px]">
-                          <span className="font-bold text-blue-950">{item.factorName}: </span>
-                          <span className="text-gray-700">{item.impactText}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 
             {/* UNAUTHENTICATED USER ACCESS GATE OVERLAY CARD */}
             {!user ? (
               <div className="relative bg-white rounded-3xl shadow-lg border-2 border-blue-500/30 p-8 overflow-hidden">
-                <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl" />
-
                 <div className="relative z-10 text-center max-w-md mx-auto space-y-4">
                   <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto shadow-inner">
                     <Lock className="w-8 h-8" />
                   </div>
 
                   <h3 className="text-2xl font-black text-gray-900">
-                    Sign In to Unlock Full Specs & Test Drive
+                    Sign In to Unlock Specs & Redeem Points
                   </h3>
 
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    To access detailed technical specifications, 140-point inspection history, direct seller contact details, and complete your test drive booking, please log in or create your free account.
+                    Log in or create your free account to access vehicle inspection history and redeem your referral wallet points for instant car discounts!
                   </p>
 
                   <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
@@ -352,9 +374,8 @@ const CarDetailsPage = () => {
                 </div>
               </div>
             ) : (
-              /* AUTHENTICATED USER DETAILED SPECS & HIGHLIGHTS */
+              /* AUTHENTICATED USER SPECS */
               <div className="space-y-6">
-                {/* Specs Grid */}
                 <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-blue-600" />
@@ -387,44 +408,18 @@ const CarDetailsPage = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Highlights & Features */}
-                <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-gray-900">Features & Key Highlights</h3>
-                  <div className="bg-blue-50/70 p-4 rounded-2xl border border-blue-100">
-                    <ul className="space-y-2 text-xs font-semibold text-blue-900">
-                      {carDetails.highlights?.map((h: string, idx: number) => (
-                        <li key={idx} className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {carDetails.features?.map((f: string, idx: number) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold text-xs rounded-xl transition-colors"
-                      >
-                        ✓ {f}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             )}
           </div>
 
-          {/* Right Column: Booking Form / Purchase Wizard (5 cols) */}
+          {/* Right Column: Booking Form & Wallet Points Redemption (5 cols) */}
           <div className="lg:col-span-5">
             <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 sticky top-24">
               <h3 className="text-xl font-black text-gray-900 mb-1">
                 Reserve & Book Test Drive
               </h3>
               <p className="text-xs text-gray-500 mb-6">
-                Zero booking fee. Free doorstep or branch inspection test drive.
+                Zero booking fee. Instant referral reward points on booking completion.
               </p>
 
               {!user ? (
@@ -434,7 +429,7 @@ const CarDetailsPage = () => {
                     Authentication Required
                   </p>
                   <p className="text-[11px] text-amber-800">
-                    Please log in or create an account to schedule test drives and reserve vehicles.
+                    Please log in or create an account to schedule test drives and redeem wallet points.
                   </p>
                   <button
                     onClick={() => openAuthModal("login")}
@@ -567,7 +562,7 @@ const CarDetailsPage = () => {
                   )}
 
                   {step === 3 && (
-                    <div className="space-y-3 animate-in fade-in">
+                    <div className="space-y-4 animate-in fade-in">
                       <div>
                         <label className="block text-xs font-bold uppercase text-gray-600 mb-1">
                           Payment Mode
@@ -576,7 +571,7 @@ const CarDetailsPage = () => {
                           name="paymentMethod"
                           value={formData.paymentMethod}
                           onChange={handleInputChange}
-                          className="w-full px-3.5 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+                          className="w-full px-3.5 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white font-medium"
                           required
                         >
                           <option value="">Select payment option</option>
@@ -585,28 +580,74 @@ const CarDetailsPage = () => {
                         </select>
                       </div>
 
-                      {formData.paymentMethod === "loan" && (
-                        <div>
-                          <label className="block text-xs font-bold uppercase text-gray-600 mb-1">
-                            Down Payment Amount (₹)
-                          </label>
-                          <input
-                            type="text"
-                            name="downPayment"
-                            value={formData.downPayment}
-                            onChange={handleInputChange}
-                            placeholder="e.g. ₹ 1,00,000"
-                            className="w-full px-3.5 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
-                          />
+                      {/* Wallet Points Redemption Section */}
+                      <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 p-4 rounded-2xl border border-orange-200 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            <Wallet className="w-4 h-4 text-orange-600" />
+                            <span className="text-xs font-black text-gray-900">
+                              Redeem Referral Wallet Points
+                            </span>
+                          </div>
+                          <span className="bg-orange-500 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-full">
+                            {walletSummary?.currentBalance ?? 0} pts available
+                          </span>
                         </div>
-                      )}
+
+                        {walletSummary && walletSummary.currentBalance >= walletSummary.tenantConfig.minRedeemPoints ? (
+                          <div className="space-y-2 pt-1">
+                            <label className="flex items-center space-x-2 text-xs font-bold text-gray-800 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={redeemPoints}
+                                onChange={(e) => setRedeemPoints(e.target.checked)}
+                                className="w-4 h-4 text-orange-600 rounded border-gray-300 focus:ring-orange-500"
+                              />
+                              <span>Apply points for instant booking discount</span>
+                            </label>
+
+                            {redeemPoints && (
+                              <div className="space-y-2 pt-2 border-t border-orange-200/60 animate-in fade-in">
+                                <div className="flex items-center justify-between text-xs">
+                                  <span className="font-bold text-gray-700">Points to Redeem:</span>
+                                  <span className="font-extrabold text-orange-700">{pointsInput} pts</span>
+                                </div>
+                                <input
+                                  type="number"
+                                  min={walletSummary.tenantConfig.minRedeemPoints}
+                                  max={walletSummary.currentBalance}
+                                  value={pointsInput}
+                                  onChange={(e) => setPointsInput(parseInt(e.target.value) || 0)}
+                                  className="w-full px-3 py-2 text-xs font-extrabold bg-white border border-orange-300 rounded-xl focus:outline-none"
+                                />
+
+                                {redemptionPreview && (
+                                  <div className="p-2.5 bg-white rounded-xl border border-orange-200 text-xs space-y-1">
+                                    <p className="font-extrabold text-green-700 flex justify-between">
+                                      <span>Instant Discount:</span>
+                                      <span>- ₹{redemptionPreview.discountAmount.toLocaleString("en-IN")}</span>
+                                    </p>
+                                    {!redemptionPreview.isValid && (
+                                      <p className="text-[10px] text-red-600 font-bold">{redemptionPreview.message}</p>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-[11px] text-gray-600 leading-relaxed">
+                            Minimum {walletSummary?.tenantConfig.minRedeemPoints ?? 50} points required to redeem discount. Invite friends to earn more points!
+                          </p>
+                        )}
+                      </div>
 
                       <div className="bg-blue-50 p-3 rounded-xl border border-blue-100 text-xs text-blue-900 space-y-1">
                         <p className="font-bold flex items-center gap-1">
-                          <CheckCircle2 className="w-4 h-4 text-blue-600" /> Free 7-Day Trial Included
+                          <CheckCircle2 className="w-4 h-4 text-blue-600" /> Free 7-Day Trial & Referral Reward
                         </p>
                         <p className="text-[11px] text-blue-800">
-                          Money-back guarantee if you change your mind within 7 days.
+                          Completing this purchase earns both you and your referrer tenant reward points!
                         </p>
                       </div>
                     </div>
@@ -639,9 +680,10 @@ const CarDetailsPage = () => {
                     ) : (
                       <button
                         type="submit"
-                        className="ml-auto py-2.5 px-6 font-bold text-xs rounded-xl text-white bg-green-600 hover:bg-green-700 shadow-md transition-all"
+                        className="ml-auto py-2.5 px-6 font-bold text-xs rounded-xl text-white bg-green-600 hover:bg-green-700 shadow-md transition-all flex items-center gap-1.5"
                       >
-                        Confirm Booking
+                        <Gift className="w-4 h-4" />
+                        <span>Confirm Booking & Earn Points</span>
                       </button>
                     )}
                   </div>
