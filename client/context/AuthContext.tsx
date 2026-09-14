@@ -8,6 +8,10 @@ export type User = {
   email: string;
   fullName: string;
   phone: string;
+  tenantId?: string;
+  referralCode?: string;
+  referredByCode?: string;
+  walletBalance?: number;
 };
 
 type AuthContextType = {
@@ -21,9 +25,10 @@ type AuthContextType = {
   signUp: (
     email: string,
     password: string,
-    userData: { fullName: string; phone: string }
+    userData: { fullName: string; phone: string; tenantId?: string; referralCode?: string }
   ) => Promise<void>;
   signOut: () => Promise<void>;
+  updateUserData: (updated: Partial<User>) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -49,6 +54,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       }
     }
   }, []);
+
+  const updateUserData = (updated: Partial<User>) => {
+    setUser((prev) => {
+      if (!prev) return null;
+      const nextUser = { ...prev, ...updated };
+      localStorage.setItem("user", JSON.stringify(nextUser));
+      return nextUser;
+    });
+  };
 
   const openAuthModal = (
     mode: "login" | "signup" = "login",
@@ -90,7 +104,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const signUp = async (
     email: string,
     password: string,
-    userData: { fullName: string; phone: string }
+    userData: { fullName: string; phone: string; tenantId?: string; referralCode?: string }
   ) => {
     setLoading(true);
     try {
@@ -134,6 +148,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         signIn,
         signUp,
         signOut,
+        updateUserData,
       }}
     >
       {children}

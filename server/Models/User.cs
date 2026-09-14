@@ -24,6 +24,18 @@ public class User
     [Phone]
     public string Phone { get; set; } = string.Empty;
 
+    public string TenantId { get; set; } = "tenant-default";
+
+    public string ReferralCode { get; set; } = string.Empty;
+
+    public string? ReferredByCode { get; set; }
+
+    public string? ReferredByUserId { get; set; }
+
+    public int ReferralCount { get; set; } = 0;
+
+    public int SuccessfulReferrals { get; set; } = 0;
+
     [BsonRepresentation(BsonType.ObjectId)]
     public List<string> BookingId { get; set; } = new List<string>();
 

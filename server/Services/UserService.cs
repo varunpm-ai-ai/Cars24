@@ -10,10 +10,12 @@ public class UserService
     public UserService(IConfiguration config)
     {
         var client = new MongoClient(config.GetConnectionString("Cars24DB"));
-
-        var database = client.GetDatabase(config["MongoDB:DatabaseName"]);
+        var databaseName = config["MongoDB:DatabaseName"] ?? "Cars24DB";
+        var database = client.GetDatabase(databaseName);
         _users = database.GetCollection<User>("Users");
     }
+
+    public IMongoCollection<User> GetUsersCollection() => _users;
 
     public async Task<User?> GetByEmailAsync(string email) =>
         await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
@@ -25,9 +27,9 @@ public class UserService
     {
         return await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
     }
+
     public async Task UpdateAsync(string id, User user)
     {
-        _users.ReplaceOneAsync(u => u.Id == id, user);
+        await _users.ReplaceOneAsync(u => u.Id == id, user);
     }
-
 }

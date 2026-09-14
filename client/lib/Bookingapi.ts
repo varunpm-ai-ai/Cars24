@@ -9,7 +9,11 @@ export const createBooking = async (userid: string, booking: any) => {
     },
     body: JSON.stringify(booking),
   });
-  return response.json();
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to create booking.");
+  }
+  return data;
 };
 
 export const getBookingbyid = async (id: string) => {
