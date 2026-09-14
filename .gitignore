@@ -4,6 +4,7 @@
 **/cars24/.env.local
 **/cars24/.env*
 
+
 # VSCode
 .vscode/
 
@@ -22,12 +23,9 @@ Thumbs.db
 **/server/bin/
 **/server/obj/
 **/server/appsettings.Development.json
-**/server/appsettings.*.json
 **/server/*.user
 **/server/.vs/
 **/server/.idea/
-**/server/appsettings.json
-C:\Web Development\Cars24\server\appsettings.json
 
 # Docker
 **/docker-compose.override.yml
