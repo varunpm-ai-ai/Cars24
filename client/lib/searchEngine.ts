@@ -1,4 +1,5 @@
 import { CarItem, getAllCars } from "./carsData";
+import { CITIES } from "./hubsData";
 
 export interface SearchFilterState {
   query?: string;
@@ -145,6 +146,46 @@ export function normalizeToken(token: string): string {
   return cleaned;
 }
 
+// Smart Location Matcher across aliases, keywords, and city presets
+export function isLocationMatched(carLocation: string, targetLocations: string[]): boolean {
+  if (!targetLocations || targetLocations.length === 0) return true;
+  if (!carLocation) return false;
+
+  const carLocLower = carLocation.toLowerCase().trim();
+  const carLocNorm = normalizeToken(carLocLower);
+
+  return targetLocations.some((target) => {
+    const targetLower = target.toLowerCase().trim();
+    const targetNorm = normalizeToken(targetLower);
+
+    // Direct exact or substring match
+    if (carLocLower.includes(targetLower) || targetLower.includes(carLocLower) || carLocNorm === targetNorm) {
+      return true;
+    }
+
+    // Check if target matches a known city in CITIES with searchKeywords
+    const cityMeta = CITIES.find((c) => {
+      const cId = c.id.toLowerCase();
+      const cName = c.cityName.toLowerCase();
+      return (
+        cId === targetNorm ||
+        cId.includes(targetNorm) ||
+        cName.includes(targetLower) ||
+        targetLower.includes(cName) ||
+        c.searchKeywords.some((k) => k === targetLower || k === targetNorm)
+      );
+    });
+
+    if (cityMeta) {
+      return cityMeta.searchKeywords.some(
+        (keyword) => carLocLower.includes(keyword) || keyword.includes(carLocLower) || normalizeToken(keyword) === carLocNorm
+      );
+    }
+
+    return false;
+  });
+}
+
 // -------------------------------------------------------------
 // 2. RELEVANCE SCORING SYSTEM
 // -------------------------------------------------------------
@@ -256,8 +297,9 @@ export function calculateCarRelevance(
   }
 
   if (filters.locations && filters.locations.length > 0) {
-    if (filters.locations.includes(car.location)) {
+    if (isLocationMatched(car.location, filters.locations)) {
       score += 10;
+      highlights.push(`City: ${car.location}`);
     } else {
       score -= 15;
     }
@@ -345,7 +387,7 @@ export function rankCars(
     ranked = ranked.filter((r) => filters.transmissions!.includes(r.car.transmission));
   }
   if (filters.locations && filters.locations.length > 0) {
-    ranked = ranked.filter((r) => filters.locations!.includes(r.car.location));
+    ranked = ranked.filter((r) => isLocationMatched(r.car.location, filters.locations!));
   }
   if (filters.owners && filters.owners.length > 0) {
     ranked = ranked.filter((r) => filters.owners!.includes(r.car.owner));

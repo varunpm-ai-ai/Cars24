@@ -45,6 +45,7 @@ import {
   SortOption,
   RankedCar,
   getSearchSuggestions,
+  isLocationMatched,
 } from "@/lib/searchEngine";
 
 function LoaderCard() {
@@ -99,6 +100,19 @@ function BuyCarContent() {
       setQuery(searchParams.get("q") || "");
     }
   }, [searchParams]);
+
+  // Sync location preset from global LocationContext if selected
+  useEffect(() => {
+    if (selectedPreset && selectedPreset.id !== "standard") {
+      const cityNameClean = selectedPreset.cityName.split("/")[0].trim();
+      setSelectedLocations((prev) => {
+        if (!prev.includes(cityNameClean)) {
+          return [cityNameClean];
+        }
+        return prev;
+      });
+    }
+  }, [selectedPreset]);
 
   // Combine filter state
   const currentFilters: SearchFilterState = useMemo(() => {
@@ -498,21 +512,27 @@ function BuyCarContent() {
                 </label>
                 <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
                   {availableLocations.slice(0, 10).map((loc) => {
-                    const isChecked = selectedLocations.includes(loc);
+                    const isChecked = selectedLocations.some((s) => isLocationMatched(loc, [s]));
+                    const count = allCars.filter((c) => isLocationMatched(c.location, [loc])).length;
                     return (
                       <label
                         key={loc}
-                        className={`flex items-center space-x-2 p-1.5 rounded-lg text-xs cursor-pointer ${
-                          isChecked ? "text-blue-700 font-semibold" : "text-slate-700 hover:bg-slate-50"
+                        className={`flex items-center justify-between p-1.5 rounded-lg text-xs cursor-pointer transition-all ${
+                          isChecked ? "bg-blue-50/70 text-blue-900 font-semibold" : "text-slate-700 hover:bg-slate-50"
                         }`}
                       >
-                        <input
-                          type="checkbox"
-                          checked={isChecked}
-                          onChange={() => toggleArrayItem(loc, selectedLocations, setSelectedLocations)}
-                          className="rounded border-slate-300 text-blue-600 focus:ring-blue-500 h-3.5 w-3.5"
-                        />
-                        <span>{loc}</span>
+                        <div className="flex items-center space-x-2">
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => toggleArrayItem(loc, selectedLocations, setSelectedLocations)}
+                            className="rounded border-slate-300 text-blue-600 focus:ring-blue-500 h-3.5 w-3.5"
+                          />
+                          <span>{loc}</span>
+                        </div>
+                        <span className="text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.2 rounded-full font-medium">
+                          {count}
+                        </span>
                       </label>
                     );
                   })}
