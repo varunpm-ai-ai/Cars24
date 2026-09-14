@@ -1,0 +1,2200 @@
+[{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eee6"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4896245/original/157588ab532633b17c874f06b8177fa7.JPG"
+  ],
+  "Title": "2022 Hyundai Venue SX",
+  "Price": "₹10.40 lakh",
+  "Emi": "₹17,200/m",
+  "Location": "Bengaluru",
+  "Specs": {
+    "Year": 2022,
+    "Km": "18,400",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eee7"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.4mFKFhaQieF6hMIYwoU_gwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Tata Nexon XZ+",
+  "Price": "₹11.10 lakh",
+  "Emi": "₹18,500/m",
+  "Location": "Hyderabad",
+  "Specs": {
+    "Year": 2021,
+    "Km": "27,800",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eee8"
+  },
+  "Images": [
+    "https://imgd-ct.aeplcdn.com/640X480/vimages/202502/3854513_140760_1_1740648369874.jpg?q=80"
+  ],
+  "Title": "2020 Maruti Baleno Alpha",
+  "Price": "₹7.60 lakh",
+  "Emi": "₹12,800/m",
+  "Location": "Pune",
+  "Specs": {
+    "Year": 2020,
+    "Km": "39,500",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eee9"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/kcdjhic9otab1-IN/image"
+  ],
+  "Title": "2019 Honda City VX",
+  "Price": "₹9.20 lakh",
+  "Emi": "₹15,300/m",
+  "Location": "Chennai",
+  "Specs": {
+    "Year": 2019,
+    "Km": "51,200",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeea"
+  },
+  "Images": [
+    "https://i.ytimg.com/vi/5F55ED5BxuY/maxresdefault.jpg"
+  ],
+  "Title": "2023 Kia Sonet GTX+",
+  "Price": "₹13.80 lakh",
+  "Emi": "₹22,900/m",
+  "Location": "Mumbai",
+  "Specs": {
+    "Year": 2023,
+    "Km": "9,500",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeeb"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4936730/original/processed_7de28b4086833ea116890c4c6a959d38.jpg"
+  ],
+  "Title": "2018 Toyota Innova Crysta GX",
+  "Price": "₹18.50 lakh",
+  "Emi": "₹30,700/m",
+  "Location": "Delhi",
+  "Specs": {
+    "Year": 2018,
+    "Km": "72,300",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeec"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.LBN9ft_xx2mDpzheABo2QgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Mahindra XUV700 AX5",
+  "Price": "₹20.90 lakh",
+  "Emi": "₹34,600/m",
+  "Location": "Noida",
+  "Specs": {
+    "Year": 2021,
+    "Km": "26,000",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeed"
+  },
+  "Images": [
+    "https://img.onlycars.co.za/upload/25/aj/9uce/2017-ford-ecosport-1-5-tdci-titanium-jd.webp"
+  ],
+  "Title": "2017 Ford EcoSport Titanium",
+  "Price": "₹6.90 lakh",
+  "Emi": "₹11,500/m",
+  "Location": "Ahmedabad",
+  "Specs": {
+    "Year": 2017,
+    "Km": "84,400",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeee"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.zuNSkRhTNEGdjKkQFpEOzwHaE5?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Volkswagen Polo GT",
+  "Price": "₹8.80 lakh",
+  "Emi": "₹14,600/m",
+  "Location": "Kolkata",
+  "Specs": {
+    "Year": 2020,
+    "Km": "41,000",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eeef"
+  },
+  "Images": [
+    "https://tse2.mm.bing.net/th/id/OIP.jtBNx6QnVd70hA4I5XW_ZAHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Skoda Kushaq Style",
+  "Price": "₹15.60 lakh",
+  "Emi": "₹25,900/m",
+  "Location": "Jaipur",
+  "Specs": {
+    "Year": 2022,
+    "Km": "22,700",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef0"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.egcm0thoIJKSlk_0HMceEQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Renault Kwid Climber",
+  "Price": "₹4.20 lakh",
+  "Emi": "₹7,000/m",
+  "Location": "Lucknow",
+  "Specs": {
+    "Year": 2019,
+    "Km": "58,600",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef1"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.lZWPvG4UGkRPSMIdFZfxrgHaEE?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 MG Hector Sharp",
+  "Price": "₹17.90 lakh",
+  "Emi": "₹29,700/m",
+  "Location": "Indore",
+  "Specs": {
+    "Year": 2021,
+    "Km": "31,400",
+    "Fuel": "Diesel",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef2"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/u92chbuuzz9p1-IN/image;s=850x0"
+  ],
+  "Title": "2023 Tata Punch Adventure",
+  "Price": "₹7.90 lakh",
+  "Emi": "₹13,100/m",
+  "Location": "Nagpur",
+  "Specs": {
+    "Year": 2023,
+    "Km": "8,900",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef3"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.Hgxc9gkLrfGHr6adBs6iFgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2018 Hyundai i20 Asta",
+  "Price": "₹6.80 lakh",
+  "Emi": "₹11,300/m",
+  "Location": "Kochi",
+  "Specs": {
+    "Year": 2018,
+    "Km": "63,000",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef4"
+  },
+  "Images": [
+    "https://www.mahindrafirstchoice.com/_next/image?url=https:%2F%2Fmda.spinny.com%2Fsp-file-system%2Fpublic%2F2026-03-31%2F225f8d7038db4af18bcb23c0d253f9c3%2Fraw%2Ffile.JPG&w=1920&q=75"
+  ],
+  "Title": "2020 Maruti Brezza ZXI",
+  "Price": "₹9.80 lakh",
+  "Emi": "₹16,300/m",
+  "Location": "Surat",
+  "Specs": {
+    "Year": 2020,
+    "Km": "36,800",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef5"
+  },
+  "Images": [
+    "https://www.team-bhp.com/forum/attachments/test-drives-initial-ownership-reports/2667707d1728922806t-my-2024-mahindra-thar-lx-rwd-review-niche-chic-img_0248.jpeg"
+  ],
+  "Title": "2024 Mahindra Thar LX",
+  "Price": "₹17.50 lakh",
+  "Emi": "₹29,000/m",
+  "Location": "Chandigarh",
+  "Specs": {
+    "Year": 2024,
+    "Km": "4,500",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef6"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.IrVYGcLEtBqlCwGmdgOQOwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Toyota Hyryder V",
+  "Price": "₹16.90 lakh",
+  "Emi": "₹28,100/m",
+  "Location": "Mysuru",
+  "Specs": {
+    "Year": 2022,
+    "Km": "15,300",
+    "Fuel": "Hybrid",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef7"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.9Azc3V9Vgvw9X8mmcpEDJwHaEm?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2017 Honda Jazz VX",
+  "Price": "₹5.90 lakh",
+  "Emi": "₹9,800/m",
+  "Location": "Visakhapatnam",
+  "Specs": {
+    "Year": 2017,
+    "Km": "77,900",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef8"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/k/i/kiacarens_374116_glacierwhitepearl_base_1.jpeg"
+  ],
+  "Title": "2021 Kia Carens Prestige",
+  "Price": "₹12.90 lakh",
+  "Emi": "₹21,400/m",
+  "Location": "Coimbatore",
+  "Specs": {
+    "Year": 2021,
+    "Km": "29,600",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eef9"
+  },
+  "Images": [
+    "https://mda.spinny.com/sp-file-system/public/2026-05-03/616e2b7c570040bcbe36e4bc8356c4db/raw/file.JPG"
+  ],
+  "Title": "2023 Tata Tiago EV XT",
+  "Price": "₹9.40 lakh",
+  "Emi": "₹15,600/m",
+  "Location": "Bhubaneswar",
+  "Specs": {
+    "Year": 2023,
+    "Km": "7,800",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eefa"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.PluaR-S_XPB0UP1FF7CIQAHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Nissan Magnite XV",
+  "Price": "₹6.70 lakh",
+  "Emi": "₹11,100/m",
+  "Location": "Patna",
+  "Specs": {
+    "Year": 2019,
+    "Km": "46,900",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eefb"
+  },
+  "Images": [
+    "https://tse3.mm.bing.net/th/id/OIP.ls1ZKyxJwTPZpA_L9kQuowHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Hyundai Verna SX",
+  "Price": "₹10.20 lakh",
+  "Emi": "₹16,900/m",
+  "Location": "Gurugram",
+  "Specs": {
+    "Year": 2020,
+    "Km": "33,500",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eefc"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.wGKn0Ok5Gt7P7fXj-yfuwAHaE6?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2018 Mahindra Scorpio S11",
+  "Price": "₹12.30 lakh",
+  "Emi": "₹20,400/m",
+  "Location": "Raipur",
+  "Specs": {
+    "Year": 2018,
+    "Km": "91,200",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eefd"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/f/r/fronxzetasmarthybridmtsplendidsilver_base5_2.jpg"
+  ],
+  "Title": "2022 Maruti Fronx Alpha",
+  "Price": "₹11.80 lakh",
+  "Emi": "₹19,600/m",
+  "Location": "Thane",
+  "Specs": {
+    "Year": 2022,
+    "Km": "12,600",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687db464d8d3925c08eefe"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.-LQlWQmlsdF_kZq8wD9D2wHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Skoda Slavia Style",
+  "Price": "₹14.70 lakh",
+  "Emi": "₹24,400/m",
+  "Location": "Bhopal",
+  "Specs": {
+    "Year": 2021,
+    "Km": "24,900",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08eeff"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/u92chbuuzz9p1-IN/image;s=850x0"
+  ],
+  "Title": "2023 Hyundai Creta SX(O)",
+  "Price": "₹10.40 lakh",
+  "Emi": "₹17,200/m",
+  "Location": "Bengaluru",
+  "Specs": {
+    "Year": 2023,
+    "Km": "18,951",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef00"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4936730/original/processed_7de28b4086833ea116890c4c6a959d38.jpg"
+  ],
+  "Title": "2022 Tata Harrier XZA+",
+  "Price": "₹11.10 lakh",
+  "Emi": "₹18,500/m",
+  "Location": "Hyderabad",
+  "Specs": {
+    "Year": 2021,
+    "Km": "37,768",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef01"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.Hgxc9gkLrfGHr6adBs6iFgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Maruti Swift ZXI",
+  "Price": "₹7.60 lakh",
+  "Emi": "₹12,800/m",
+  "Location": "Pune",
+  "Specs": {
+    "Year": 2020,
+    "Km": "40,664",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef02"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.wGKn0Ok5Gt7P7fXj-yfuwAHaE6?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Honda Amaze VX",
+  "Price": "₹9.20 lakh",
+  "Emi": "₹15,300/m",
+  "Location": "Chennai",
+  "Specs": {
+    "Year": 2020,
+    "Km": "51,408",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef03"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.9Azc3V9Vgvw9X8mmcpEDJwHaEm?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Kia Seltos GTX+",
+  "Price": "₹13.80 lakh",
+  "Emi": "₹22,900/m",
+  "Location": "Mumbai",
+  "Specs": {
+    "Year": 2023,
+    "Km": "6,641",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef04"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.4mFKFhaQieF6hMIYwoU_gwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Toyota Glanza V",
+  "Price": "₹18.50 lakh",
+  "Emi": "₹30,700/m",
+  "Location": "Delhi",
+  "Specs": {
+    "Year": 2018,
+    "Km": "77,414",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef05"
+  },
+  "Images": [
+    "https://tse3.mm.bing.net/th/id/OIP.ls1ZKyxJwTPZpA_L9kQuowHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Mahindra XUV300 W8",
+  "Price": "₹20.90 lakh",
+  "Emi": "₹34,600/m",
+  "Location": "Noida",
+  "Specs": {
+    "Year": 2022,
+    "Km": "30,915",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef06"
+  },
+  "Images": [
+    "https://imgd-ct.aeplcdn.com/640X480/vimages/202502/3854513_140760_1_1740648369874.jpg?q=80"
+  ],
+  "Title": "2018 Ford Aspire Titanium",
+  "Price": "₹6.90 lakh",
+  "Emi": "₹11,500/m",
+  "Location": "Ahmedabad",
+  "Specs": {
+    "Year": 2018,
+    "Km": "89,246",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef07"
+  },
+  "Images": [
+    "https://i.ytimg.com/vi/5F55ED5BxuY/maxresdefault.jpg"
+  ],
+  "Title": "2021 Volkswagen Virtus GT",
+  "Price": "₹8.80 lakh",
+  "Emi": "₹14,600/m",
+  "Location": "Kolkata",
+  "Specs": {
+    "Year": 2020,
+    "Km": "41,537",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef08"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/k/i/kiacarens_374116_glacierwhitepearl_base_1.jpeg"
+  ],
+  "Title": "2023 Skoda Slavia Ambition",
+  "Price": "₹15.60 lakh",
+  "Emi": "₹25,900/m",
+  "Location": "Jaipur",
+  "Specs": {
+    "Year": 2023,
+    "Km": "25,784",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef09"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.lZWPvG4UGkRPSMIdFZfxrgHaEE?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Renault Kiger RXZ",
+  "Price": "₹4.20 lakh",
+  "Emi": "₹7,000/m",
+  "Location": "Lucknow",
+  "Specs": {
+    "Year": 2019,
+    "Km": "55,437",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0a"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/f/r/fronxzetasmarthybridmtsplendidsilver_base5_2.jpg"
+  ],
+  "Title": "2022 MG Astor Sharp",
+  "Price": "₹17.90 lakh",
+  "Emi": "₹29,700/m",
+  "Location": "Indore",
+  "Specs": {
+    "Year": 2021,
+    "Km": "40,822",
+    "Fuel": "Diesel",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0b"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/kcdjhic9otab1-IN/image"
+  ],
+  "Title": "2024 Tata Altroz XZ+",
+  "Price": "₹7.90 lakh",
+  "Emi": "₹13,100/m",
+  "Location": "Nagpur",
+  "Specs": {
+    "Year": 2024,
+    "Km": "18,225",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0c"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.LBN9ft_xx2mDpzheABo2QgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Hyundai Aura SX",
+  "Price": "₹6.80 lakh",
+  "Emi": "₹11,300/m",
+  "Location": "Kochi",
+  "Specs": {
+    "Year": 2018,
+    "Km": "67,901",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0d"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.egcm0thoIJKSlk_0HMceEQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Maruti Ciaz Alpha",
+  "Price": "₹9.80 lakh",
+  "Emi": "₹16,300/m",
+  "Location": "Surat",
+  "Specs": {
+    "Year": 2020,
+    "Km": "37,743",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0e"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.zuNSkRhTNEGdjKkQFpEOzwHaE5?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Mahindra Bolero Neo N10",
+  "Price": "₹17.50 lakh",
+  "Emi": "₹29,000/m",
+  "Location": "Chandigarh",
+  "Specs": {
+    "Year": 2024,
+    "Km": "12,352",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef0f"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.-LQlWQmlsdF_kZq8wD9D2wHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Toyota Fortuner 4x2",
+  "Price": "₹16.90 lakh",
+  "Emi": "₹28,100/m",
+  "Location": "Mysuru",
+  "Specs": {
+    "Year": 2022,
+    "Km": "20,861",
+    "Fuel": "Hybrid",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef10"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4896245/original/157588ab532633b17c874f06b8177fa7.JPG"
+  ],
+  "Title": "2018 Honda WR-V VX",
+  "Price": "₹5.90 lakh",
+  "Emi": "₹9,800/m",
+  "Location": "Visakhapatnam",
+  "Specs": {
+    "Year": 2018,
+    "Km": "80,142",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef11"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.IrVYGcLEtBqlCwGmdgOQOwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Kia Carnival Prestige",
+  "Price": "₹12.90 lakh",
+  "Emi": "₹21,400/m",
+  "Location": "Coimbatore",
+  "Specs": {
+    "Year": 2022,
+    "Km": "29,794",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef12"
+  },
+  "Images": [
+    "https://www.mahindrafirstchoice.com/_next/image?url=https:%2F%2Fmda.spinny.com%2Fsp-file-system%2Fpublic%2F2026-03-31%2F225f8d7038db4af18bcb23c0d253f9c3%2Fraw%2Ffile.JPG&w=1920&q=75"
+  ],
+  "Title": "2024 Tata Safari Accomplished",
+  "Price": "₹9.40 lakh",
+  "Emi": "₹15,600/m",
+  "Location": "Bhubaneswar",
+  "Specs": {
+    "Year": 2023,
+    "Km": "8,951",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef13"
+  },
+  "Images": [
+    "https://www.team-bhp.com/forum/attachments/test-drives-initial-ownership-reports/2667707d1728922806t-my-2024-mahindra-thar-lx-rwd-review-niche-chic-img_0248.jpeg"
+  ],
+  "Title": "2020 Nissan Kicks XV",
+  "Price": "₹6.70 lakh",
+  "Emi": "₹11,100/m",
+  "Location": "Patna",
+  "Specs": {
+    "Year": 2019,
+    "Km": "56,675",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef14"
+  },
+  "Images": [
+    "https://tse2.mm.bing.net/th/id/OIP.jtBNx6QnVd70hA4I5XW_ZAHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Hyundai Alcazar Platinum",
+  "Price": "₹10.20 lakh",
+  "Emi": "₹16,900/m",
+  "Location": "Gurugram",
+  "Specs": {
+    "Year": 2021,
+    "Km": "42,228",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef15"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.PluaR-S_XPB0UP1FF7CIQAHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Mahindra XUV500 W11",
+  "Price": "₹12.30 lakh",
+  "Emi": "₹20,400/m",
+  "Location": "Raipur",
+  "Specs": {
+    "Year": 2018,
+    "Km": "94,220",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef16"
+  },
+  "Images": [
+    "https://img.onlycars.co.za/upload/25/aj/9uce/2017-ford-ecosport-1-5-tdci-titanium-jd.webp"
+  ],
+  "Title": "2023 Maruti Grand Vitara Alpha",
+  "Price": "₹11.80 lakh",
+  "Emi": "₹19,600/m",
+  "Location": "Thane",
+  "Specs": {
+    "Year": 2022,
+    "Km": "12,052",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687e9164d8d3925c08ef17"
+  },
+  "Images": [
+    "https://mda.spinny.com/sp-file-system/public/2026-05-03/616e2b7c570040bcbe36e4bc8356c4db/raw/file.JPG"
+  ],
+  "Title": "2022 Skoda Superb L&K",
+  "Price": "₹14.70 lakh",
+  "Emi": "₹24,400/m",
+  "Location": "Bhopal",
+  "Specs": {
+    "Year": 2022,
+    "Km": "29,598",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef18"
+  },
+  "Images": [
+    "https://tse2.mm.bing.net/th/id/OIP.jtBNx6QnVd70hA4I5XW_ZAHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Hyundai Exter SX",
+  "Price": "₹8.90 lakh",
+  "Emi": "₹14,800/m",
+  "Location": "Goa",
+  "Specs": {
+    "Year": 2023,
+    "Km": "43,880",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef19"
+  },
+  "Images": [
+    "https://img.onlycars.co.za/upload/25/aj/9uce/2017-ford-ecosport-1-5-tdci-titanium-jd.webp"
+  ],
+  "Title": "2023 Tata Curvv Accomplished",
+  "Price": "₹17.20 lakh",
+  "Emi": "₹28,500/m",
+  "Location": "Mangalore",
+  "Specs": {
+    "Year": 2021,
+    "Km": "84,707",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1a"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/f/r/fronxzetasmarthybridmtsplendidsilver_base5_2.jpg"
+  ],
+  "Title": "2022 Maruti XL6 Alpha",
+  "Price": "₹11.40 lakh",
+  "Emi": "₹18,900/m",
+  "Location": "Nashik",
+  "Specs": {
+    "Year": 2019,
+    "Km": "23,808",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1b"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/kcdjhic9otab1-IN/image"
+  ],
+  "Title": "2021 Honda Elevate ZX",
+  "Price": "₹15.30 lakh",
+  "Emi": "₹25,200/m",
+  "Location": "Vijayawada",
+  "Specs": {
+    "Year": 2024,
+    "Km": "26,271",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1c"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.zuNSkRhTNEGdjKkQFpEOzwHaE5?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Kia Syros HTX",
+  "Price": "₹14.90 lakh",
+  "Emi": "₹24,400/m",
+  "Location": "Madurai",
+  "Specs": {
+    "Year": 2024,
+    "Km": "80,244",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1d"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.Hgxc9gkLrfGHr6adBs6iFgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Toyota Urban Cruiser High",
+  "Price": "₹9.80 lakh",
+  "Emi": "₹16,100/m",
+  "Location": "Ranchi",
+  "Specs": {
+    "Year": 2020,
+    "Km": "52,929",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1e"
+  },
+  "Images": [
+    "https://imgd-ct.aeplcdn.com/640X480/vimages/202502/3854513_140760_1_1740648369874.jpg?q=80"
+  ],
+  "Title": "2024 Mahindra BE 6 Pack Three",
+  "Price": "₹23.80 lakh",
+  "Emi": "₹39,200/m",
+  "Location": "Jodhpur",
+  "Specs": {
+    "Year": 2019,
+    "Km": "55,601",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef1f"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.IrVYGcLEtBqlCwGmdgOQOwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Ford Freestyle Titanium",
+  "Price": "₹6.40 lakh",
+  "Emi": "₹10,600/m",
+  "Location": "Varanasi",
+  "Specs": {
+    "Year": 2024,
+    "Km": "39,715",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef20"
+  },
+  "Images": [
+    "https://www.mahindrafirstchoice.com/_next/image?url=https:%2F%2Fmda.spinny.com%2Fsp-file-system%2Fpublic%2F2026-03-31%2F225f8d7038db4af18bcb23c0d253f9c3%2Fraw%2Ffile.JPG&w=1920&q=75"
+  ],
+  "Title": "2022 Volkswagen Taigun GT Plus",
+  "Price": "₹18.20 lakh",
+  "Emi": "₹29,800/m",
+  "Location": "Amritsar",
+  "Specs": {
+    "Year": 2019,
+    "Km": "41,980",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef21"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/u92chbuuzz9p1-IN/image;s=850x0"
+  ],
+  "Title": "2024 Skoda Kodiaq Style",
+  "Price": "₹38.50 lakh",
+  "Emi": "₹63,100/m",
+  "Location": "Dehradun",
+  "Specs": {
+    "Year": 2020,
+    "Km": "89,394",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef22"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.4mFKFhaQieF6hMIYwoU_gwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Renault Triber RXZ",
+  "Price": "₹8.20 lakh",
+  "Emi": "₹13,900/m",
+  "Location": "Guwahati",
+  "Specs": {
+    "Year": 2020,
+    "Km": "40,151",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef23"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.egcm0thoIJKSlk_0HMceEQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 MG Comet EV Plush",
+  "Price": "₹7.90 lakh",
+  "Emi": "₹12,900/m",
+  "Location": "Siliguri",
+  "Specs": {
+    "Year": 2023,
+    "Km": "97,229",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef24"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.PluaR-S_XPB0UP1FF7CIQAHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Tata Tigor XZA+",
+  "Price": "₹8.70 lakh",
+  "Emi": "₹14,300/m",
+  "Location": "Udaipur",
+  "Specs": {
+    "Year": 2020,
+    "Km": "80,831",
+    "Fuel": "Petrol",
+    "Transmission": "AMT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef25"
+  },
+  "Images": [
+    "https://www.team-bhp.com/forum/attachments/test-drives-initial-ownership-reports/2667707d1728922806t-my-2024-mahindra-thar-lx-rwd-review-niche-chic-img_0248.jpeg"
+  ],
+  "Title": "2020 Hyundai Grand i10 Nios Sportz",
+  "Price": "₹6.30 lakh",
+  "Emi": "₹10,100/m",
+  "Location": "Trivandrum",
+  "Specs": {
+    "Year": 2024,
+    "Km": "10,838",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef26"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.lZWPvG4UGkRPSMIdFZfxrgHaEE?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Maruti Ignis Alpha",
+  "Price": "₹7.10 lakh",
+  "Emi": "₹11,400/m",
+  "Location": "Aurangabad",
+  "Specs": {
+    "Year": 2019,
+    "Km": "66,550",
+    "Fuel": "Petrol",
+    "Transmission": "AMT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef27"
+  },
+  "Images": [
+    "https://i.ytimg.com/vi/5F55ED5BxuY/maxresdefault.jpg"
+  ],
+  "Title": "2022 Mahindra Marazzo M6+",
+  "Price": "₹13.80 lakh",
+  "Emi": "₹22,300/m",
+  "Location": "Hubballi",
+  "Specs": {
+    "Year": 2019,
+    "Km": "17,967",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef28"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.-LQlWQmlsdF_kZq8wD9D2wHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Toyota Camry Hybrid",
+  "Price": "₹34.20 lakh",
+  "Emi": "₹56,700/m",
+  "Location": "Salem",
+  "Specs": {
+    "Year": 2023,
+    "Km": "96,897",
+    "Fuel": "Hybrid",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef29"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4896245/original/157588ab532633b17c874f06b8177fa7.JPG"
+  ],
+  "Title": "2019 Honda Civic ZX",
+  "Price": "₹16.10 lakh",
+  "Emi": "₹26,100/m",
+  "Location": "Jamshedpur",
+  "Specs": {
+    "Year": 2021,
+    "Km": "46,502",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2a"
+  },
+  "Images": [
+    "https://tse3.mm.bing.net/th/id/OIP.ls1ZKyxJwTPZpA_L9kQuowHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Kia EV6 GT Line",
+  "Price": "₹48.90 lakh",
+  "Emi": "₹81,000/m",
+  "Location": "Gwalior",
+  "Specs": {
+    "Year": 2024,
+    "Km": "22,907",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2b"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.LBN9ft_xx2mDpzheABo2QgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Tata Curvv EV Empowered",
+  "Price": "₹22.70 lakh",
+  "Emi": "₹37,200/m",
+  "Location": "Meerut",
+  "Specs": {
+    "Year": 2020,
+    "Km": "33,781",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2c"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4936730/original/processed_7de28b4086833ea116890c4c6a959d38.jpg"
+  ],
+  "Title": "2021 Nissan X-Trail",
+  "Price": "₹32.40 lakh",
+  "Emi": "₹53,100/m",
+  "Location": "Agra",
+  "Specs": {
+    "Year": 2024,
+    "Km": "48,310",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2d"
+  },
+  "Images": [
+    "https://mda.spinny.com/sp-file-system/public/2026-05-03/616e2b7c570040bcbe36e4bc8356c4db/raw/file.JPG"
+  ],
+  "Title": "2023 Hyundai Tucson Signature",
+  "Price": "₹27.90 lakh",
+  "Emi": "₹45,900/m",
+  "Location": "Kanpur",
+  "Specs": {
+    "Year": 2023,
+    "Km": "76,579",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2e"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/k/i/kiacarens_374116_glacierwhitepearl_base_1.jpeg"
+  ],
+  "Title": "2020 Mahindra Alturas G4",
+  "Price": "₹19.80 lakh",
+  "Emi": "₹32,500/m",
+  "Location": "Vadodara",
+  "Specs": {
+    "Year": 2019,
+    "Km": "61,472",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef2f"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.9Azc3V9Vgvw9X8mmcpEDJwHaEm?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Maruti Jimny Alpha",
+  "Price": "₹15.80 lakh",
+  "Emi": "₹25,800/m",
+  "Location": "Shimla",
+  "Specs": {
+    "Year": 2023,
+    "Km": "50,720",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687efc64d8d3925c08ef30"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.wGKn0Ok5Gt7P7fXj-yfuwAHaE6?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Skoda Octavia Style",
+  "Price": "₹31.50 lakh",
+  "Emi": "₹51,800/m",
+  "Location": "Tirupati",
+  "Specs": {
+    "Year": 2020,
+    "Km": "21,540",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef31"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/kcdjhic9otab1-IN/image"
+  ],
+  "Title": "2024 Hyundai Creta N Line",
+  "Price": "₹18.9 lakh",
+  "Emi": "₹31,000/m",
+  "Location": "Bengaluru",
+  "Specs": {
+    "Year": 2022,
+    "Km": "11,446",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef32"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/f/r/fronxzetasmarthybridmtsplendidsilver_base5_2.jpg"
+  ],
+  "Title": "2023 Tata Nexon EV Empowered",
+  "Price": "₹15.8 lakh",
+  "Emi": "₹26,500/m",
+  "Location": "Mumbai",
+  "Specs": {
+    "Year": 2023,
+    "Km": "62,324",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef33"
+  },
+  "Images": [
+    "https://mda.spinny.com/sp-file-system/public/2026-05-03/616e2b7c570040bcbe36e4bc8356c4db/raw/file.JPG"
+  ],
+  "Title": "2022 Maruti Ertiga ZXI+",
+  "Price": "₹12.4 lakh",
+  "Emi": "₹20,300/m",
+  "Location": "Delhi",
+  "Specs": {
+    "Year": 2020,
+    "Km": "86,961",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef34"
+  },
+  "Images": [
+    "https://mc.bajajfinserv.in/media/catalog/product/k/i/kiacarens_374116_glacierwhitepearl_base_1.jpeg"
+  ],
+  "Title": "2021 Honda BR-V VX",
+  "Price": "₹10.9 lakh",
+  "Emi": "₹17,900/m",
+  "Location": "Pune",
+  "Specs": {
+    "Year": 2021,
+    "Km": "13,847",
+    "Fuel": "Petrol",
+    "Transmission": "CVT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef35"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.LBN9ft_xx2mDpzheABo2QgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Kia Carnival Limousine",
+  "Price": "₹42.5 lakh",
+  "Emi": "₹69,800/m",
+  "Location": "Hyderabad",
+  "Specs": {
+    "Year": 2020,
+    "Km": "92,793",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef36"
+  },
+  "Images": [
+    "https://apollo.olx.in/v1/files/u92chbuuzz9p1-IN/image;s=850x0"
+  ],
+  "Title": "2020 Toyota Corolla Altis GL",
+  "Price": "₹8.7 lakh",
+  "Emi": "₹14,200/m",
+  "Location": "Chennai",
+  "Specs": {
+    "Year": 2021,
+    "Km": "46,733",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef37"
+  },
+  "Images": [
+    "https://tse3.mm.bing.net/th/id/OIP.ls1ZKyxJwTPZpA_L9kQuowHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Mahindra Scorpio N Z8L",
+  "Price": "₹21.6 lakh",
+  "Emi": "₹35,600/m",
+  "Location": "Kochi",
+  "Specs": {
+    "Year": 2019,
+    "Km": "19,626",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef38"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.wGKn0Ok5Gt7P7fXj-yfuwAHaE6?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2019 Ford Endeavour Titanium",
+  "Price": "₹19.4 lakh",
+  "Emi": "₹31,900/m",
+  "Location": "Lucknow",
+  "Specs": {
+    "Year": 2024,
+    "Km": "8,788",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef39"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.PluaR-S_XPB0UP1FF7CIQAHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Volkswagen Tiguan Elegance",
+  "Price": "₹33.2 lakh",
+  "Emi": "₹54,400/m",
+  "Location": "Jaipur",
+  "Specs": {
+    "Year": 2022,
+    "Km": "51,911",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3a"
+  },
+  "Images": [
+    "https://th.bing.com/th/id/OIP.zuNSkRhTNEGdjKkQFpEOzwHaE5?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Skoda Kushaq Monte Carlo",
+  "Price": "₹19.1 lakh",
+  "Emi": "₹31,200/m",
+  "Location": "Noida",
+  "Specs": {
+    "Year": 2021,
+    "Km": "53,030",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3b"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.lZWPvG4UGkRPSMIdFZfxrgHaEE?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Renault Duster RXZ",
+  "Price": "₹9.2 lakh",
+  "Emi": "₹15,100/m",
+  "Location": "Indore",
+  "Specs": {
+    "Year": 2022,
+    "Km": "43,186",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3c"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.IrVYGcLEtBqlCwGmdgOQOwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 MG ZS EV Exclusive",
+  "Price": "₹24.8 lakh",
+  "Emi": "₹40,800/m",
+  "Location": "Nagpur",
+  "Specs": {
+    "Year": 2022,
+    "Km": "33,562",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3d"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4936730/original/processed_7de28b4086833ea116890c4c6a959d38.jpg"
+  ],
+  "Title": "2022 Tata Hexa XT",
+  "Price": "₹10.8 lakh",
+  "Emi": "₹17,800/m",
+  "Location": "Patna",
+  "Specs": {
+    "Year": 2019,
+    "Km": "5,792",
+    "Fuel": "Diesel",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3e"
+  },
+  "Images": [
+    "https://img.onlycars.co.za/upload/25/aj/9uce/2017-ford-ecosport-1-5-tdci-titanium-jd.webp"
+  ],
+  "Title": "2020 Hyundai Tucson GLS",
+  "Price": "₹16.9 lakh",
+  "Emi": "₹27,600/m",
+  "Location": "Surat",
+  "Specs": {
+    "Year": 2022,
+    "Km": "63,131",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef3f"
+  },
+  "Images": [
+    "https://imgd-ct.aeplcdn.com/640X480/vimages/202502/3854513_140760_1_1740648369874.jpg?q=80"
+  ],
+  "Title": "2023 Maruti S-Presso VXI",
+  "Price": "₹6.4 lakh",
+  "Emi": "₹10,500/m",
+  "Location": "Mysuru",
+  "Specs": {
+    "Year": 2022,
+    "Km": "55,013",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef40"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.egcm0thoIJKSlk_0HMceEQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Mahindra XUV400 EL",
+  "Price": "₹17.7 lakh",
+  "Emi": "₹29,000/m",
+  "Location": "Raipur",
+  "Specs": {
+    "Year": 2024,
+    "Km": "31,545",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef41"
+  },
+  "Images": [
+    "https://i.ytimg.com/vi/5F55ED5BxuY/maxresdefault.jpg"
+  ],
+  "Title": "2021 Toyota Hilux High",
+  "Price": "₹36.5 lakh",
+  "Emi": "₹59,900/m",
+  "Location": "Coimbatore",
+  "Specs": {
+    "Year": 2023,
+    "Km": "86,649",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef42"
+  },
+  "Images": [
+    "https://images10.gaadi.com/usedcar_image/4896245/original/157588ab532633b17c874f06b8177fa7.JPG"
+  ],
+  "Title": "2019 Honda CR-V VX",
+  "Price": "₹15.4 lakh",
+  "Emi": "₹25,300/m",
+  "Location": "Goa",
+  "Specs": {
+    "Year": 2019,
+    "Km": "37,783",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef43"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.9Azc3V9Vgvw9X8mmcpEDJwHaEm?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2024 Kia EV9 GT-Line",
+  "Price": "₹64.9 lakh",
+  "Emi": "₹1,06,000/m",
+  "Location": "Bhopal",
+  "Specs": {
+    "Year": 2023,
+    "Km": "50,425",
+    "Fuel": "Electric",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef44"
+  },
+  "Images": [
+    "https://tse2.mm.bing.net/th/id/OIP.jtBNx6QnVd70hA4I5XW_ZAHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2023 Tata Harrier Fearless",
+  "Price": "₹23.6 lakh",
+  "Emi": "₹38,900/m",
+  "Location": "Vadodara",
+  "Specs": {
+    "Year": 2020,
+    "Km": "71,379",
+    "Fuel": "Diesel",
+    "Transmission": "Automatic",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef45"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.-LQlWQmlsdF_kZq8wD9D2wHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2020 Nissan Sunny XV",
+  "Price": "₹5.8 lakh",
+  "Emi": "₹9,600/m",
+  "Location": "Kanpur",
+  "Specs": {
+    "Year": 2022,
+    "Km": "51,330",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef46"
+  },
+  "Images": [
+    "https://tse1.mm.bing.net/th/id/OIP.4mFKFhaQieF6hMIYwoU_gwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2022 Hyundai i10 Nios Asta",
+  "Price": "₹7.2 lakh",
+  "Emi": "₹11,900/m",
+  "Location": "Ranchi",
+  "Specs": {
+    "Year": 2023,
+    "Km": "52,362",
+    "Fuel": "Petrol",
+    "Transmission": "AMT",
+    "Owner": "2nd Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef47"
+  },
+  "Images": [
+    "https://tse4.mm.bing.net/th/id/OIP.Hgxc9gkLrfGHr6adBs6iFgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  ],
+  "Title": "2021 Mahindra Kuv100 NXT",
+  "Price": "₹6.1 lakh",
+  "Emi": "₹10,100/m",
+  "Location": "Jammu",
+  "Specs": {
+    "Year": 2022,
+    "Km": "11,228",
+    "Fuel": "Petrol",
+    "Transmission": "Manual",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef48"
+  },
+  "Images": [
+    "https://www.team-bhp.com/forum/attachments/test-drives-initial-ownership-reports/2667707d1728922806t-my-2024-mahindra-thar-lx-rwd-review-niche-chic-img_0248.jpeg"
+  ],
+  "Title": "2024 Maruti Celerio ZXI",
+  "Price": "₹7.5 lakh",
+  "Emi": "₹12,400/m",
+  "Location": "Shillong",
+  "Specs": {
+    "Year": 2020,
+    "Km": "46,202",
+    "Fuel": "Petrol",
+    "Transmission": "AMT",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+},
+{
+  "_id": {
+    "$oid": "6a687f6864d8d3925c08ef49"
+  },
+  "Images": [
+    "https://www.mahindrafirstchoice.com/_next/image?url=https:%2F%2Fmda.spinny.com%2Fsp-file-system%2Fpublic%2F2026-03-31%2F225f8d7038db4af18bcb23c0d253f9c3%2Fraw%2Ffile.JPG&w=1920&q=75"
+  ],
+  "Title": "2023 Skoda Rapid Style",
+  "Price": "₹12.9 lakh",
+  "Emi": "₹21,100/m",
+  "Location": "Trichy",
+  "Specs": {
+    "Year": 2020,
+    "Km": "21,563",
+    "Fuel": "Petrol",
+    "Transmission": "Automatic",
+    "Owner": "1st Owner",
+    "Insurance": "Valid"
+  },
+  "Features": [],
+  "Highlights": []
+}]
