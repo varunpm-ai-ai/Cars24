@@ -31,6 +31,8 @@ namespace server.Controllers
             var result = cars.Select(car => new
             {
                 car.Id,
+                car.UserId,
+                car.SellerName,
                 car.Title,
                 km = car.Specs.Km,
                 Fuel = car.Specs.Fuel,
@@ -38,11 +40,25 @@ namespace server.Controllers
                 Owner = car.Specs.Owner,
                 car.Emi,
                 car.Price,
+                car.BasePriceNumeric,
+                car.RecommendedPriceNumeric,
+                car.BodyType,
                 car.Location,
                 image = car.Images
             });
             return Ok(result);
         }
+
+        [HttpGet("user/{userId}")]
+        public async Task<IActionResult> GetCarsByUserId(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+                return BadRequest("UserId is required.");
+
+            var cars = await _carservice.GetByUserIdAsync(userId);
+            return Ok(cars);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Car car)
         {
@@ -52,6 +68,19 @@ namespace server.Controllers
             }
             await _carservice.CreateAsync(car);
             return CreatedAtAction(nameof(GetById), new { id = car.Id }, car);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var existingCar = await _carservice.GetByIdAsync(id);
+            if (existingCar == null)
+            {
+                return NotFound("Car not found");
+            }
+
+            await _carservice.DeleteAsync(id);
+            return Ok(new { message = "Car deleted successfully" });
         }
     }
 }

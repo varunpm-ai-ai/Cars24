@@ -1,60 +1,115 @@
 import React from "react";
 import Link from "next/link";
+import { ShieldCheck, MapPin, Phone, Mail } from "lucide-react";
 
-const Fotter = () => {
+export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-10 mt-auto border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-slate-900 text-gray-300 border-t border-slate-800 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div className="flex items-center mb-3">
-              <span className="bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-lg">
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-1">
+              <span className="bg-blue-600 text-white font-black py-1 px-2.5 rounded-lg text-lg tracking-wider">
                 CARS
               </span>
-              <span className="text-orange-500 font-bold text-lg">24</span>
+              <span className="text-orange-500 font-black text-xl ml-0.5">24</span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Buy, sell, and service pre-owned cars with instant real-time push notifications, verified quality checks, and seamless financing.
+              India's premier marketplace for buying & selling quality used cars with real-time push notifications, maintenance estimates & dynamic market pricing.
             </p>
+            <div className="flex items-center space-x-2 text-xs font-semibold text-blue-400">
+              <ShieldCheck className="w-4 h-4 text-green-400" />
+              <span>Multi-Tenant & AI Dynamic Pricing Verified</span>
+            </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-3">Buy Used Cars</h4>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              Buy & Sell Cars
+            </h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/buy-car" className="hover:text-white transition-colors">Popular Hatchbacks</Link></li>
-              <li><Link href="/buy-car" className="hover:text-white transition-colors">Premium Sedans</Link></li>
-              <li><Link href="/buy-car" className="hover:text-white transition-colors">SUVs & MUVs</Link></li>
-              <li><Link href="/buy-car" className="hover:text-white transition-colors">Wishlist & Price Alerts</Link></li>
+              <li>
+                <Link href="/buy-car" className="hover:text-white transition-colors">
+                  Buy Verified Used Cars
+                </Link>
+              </li>
+              <li>
+                <Link href="/sell-car" className="hover:text-white transition-colors">
+                  Sell Your Car
+                </Link>
+              </li>
+              <li>
+                <Link href="/maintenance-estimator" className="hover:text-white transition-colors">
+                  Maintenance Cost Estimator
+                </Link>
+              </li>
+              <li>
+                <Link href="/profile" className="hover:text-white transition-colors">
+                  User Dashboard & My Listings
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Customer Care */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-3">Services & Tools</h4>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              Services & Support
+            </h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/sell-car" className="hover:text-white transition-colors">Sell Your Car</Link></li>
-              <li><Link href="/appointments" className="hover:text-white transition-colors">My Appointments</Link></li>
-              <li><Link href="/bookings" className="hover:text-white transition-colors">My Bookings</Link></li>
-              <li><Link href="/profile/notifications" className="hover:text-white transition-colors">Push Notification Preferences</Link></li>
+              <li>
+                <Link href="/finance" className="hover:text-white transition-colors">
+                  Car Loans & Financing
+                </Link>
+              </li>
+              <li>
+                <Link href="/profile/notifications" className="hover:text-white transition-colors">
+                  Push Notification Settings
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-white transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+              <li>
+                <Link href="/partner" className="hover:text-white transition-colors">
+                  Become Our Partner
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-3">Customer Support</h4>
-            <ul className="space-y-2 text-xs">
-              <li><Link href="/faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
-              <li><Link href="/rc-transfer" className="hover:text-white transition-colors">RC Transfer Status</Link></li>
-              <li><Link href="/partner" className="hover:text-white transition-colors">Become Our Partner</Link></li>
-              <li><span className="text-gray-400">24/7 Helpline: 1800-24-2424</span></li>
+            <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              Contact & Regions
+            </h4>
+            <ul className="space-y-2 text-xs text-gray-400">
+              <li className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4 text-blue-500 shrink-0" />
+                <span>Delhi NCR • Mumbai • Manali • Bengaluru • Goa</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
+                <span>1800-24-2424 (24x7 Toll Free)</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
+                <span>support@cars24.com</span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Cars24 Services Pvt. Ltd. All rights reserved.</p>
+        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+          <p>© {new Date().getFullYear()} Cars24 Services Private Limited. All rights reserved.</p>
           <div className="flex space-x-4 mt-2 sm:mt-0">
             <Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-300">Terms of Service</Link>
-            <Link href="/profile/notifications" className="hover:text-orange-400">Notification Settings</Link>
+            <Link href="/profile/notifications" className="hover:text-orange-400">Notification Preferences</Link>
           </div>
         </div>
       </div>
@@ -62,4 +117,4 @@ const Fotter = () => {
   );
 };
 
-export default Fotter;
+export default Footer;

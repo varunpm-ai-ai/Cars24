@@ -10,9 +10,10 @@ builder.Services.AddEndpointsApiExplorer();
 string connectionstring = builder.Configuration.GetConnectionString("Cars24DB");
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<CarService>();
-builder.Services.AddSingleton<BookingService>();
+builder.Services.AddSingleton<AppointmentService>();
 builder.Services.AddSingleton<MaintenanceService>();
 builder.Services.AddSingleton<NotificationService>();
+builder.Services.AddSingleton<PricingEngineService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

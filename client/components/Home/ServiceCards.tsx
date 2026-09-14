@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { ChevronRight, Calendar, Percent, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";

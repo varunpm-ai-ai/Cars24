@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import SearchInput from "../SearchInput";
+import { useLocation } from "@/context/LocationContext";
 import { useRouter } from "next/navigation";
-import { Sparkles, SlidersHorizontal } from "lucide-react";
+import { Sparkles, SlidersHorizontal, TrendingUp } from "lucide-react";
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const { selectedPreset, openLocationDrawer } = useLocation();
   const router = useRouter();
 
   const quickFilters = [
@@ -29,30 +31,39 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg"
-          alt="Happy woman driving car"
+          alt="Cars24 Dynamic Marketplace"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/40" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 flex flex-col justify-center">
-        <div className="mb-6">
-          <h1 className="text-white text-3xl md:text-5xl font-extrabold mb-3 tracking-tight">
-            Welcome to{" "}
+        <div className="mb-6 max-w-2xl">
+          <div className="inline-flex items-center space-x-2 bg-blue-500/20 border border-blue-400/30 backdrop-blur-md px-3.5 py-1.5 rounded-full text-blue-300 text-xs font-extrabold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+            <span>AI Dynamic Pricing & Multi-Tenant Platform</span>
+          </div>
+
+          <h1 className="text-white text-3xl sm:text-4xl font-extrabold mb-2 flex items-center flex-wrap gap-2">
+            <span>Welcome to</span>
             <span className="inline-flex items-center">
-              <span className="bg-blue-600 text-white font-black py-1 px-2.5 rounded-lg text-2xl md:text-3xl mr-1 shadow-md">
+              <span className="bg-blue-600 text-white font-black py-1 px-2.5 rounded-lg text-lg tracking-wider">
                 CARS
               </span>
-              <span className="text-orange-500 font-black text-2xl md:text-3xl">24</span>
+              <span className="text-orange-500 font-black text-xl ml-0.5">24</span>
             </span>
           </h1>
+
           <div className="flex flex-col space-y-1">
-            <h2 className="text-white/90 text-2xl md:text-4xl font-bold">
-              Better drives, better lives.
+            <h2 className="text-white text-3xl sm:text-5xl font-black tracking-tight">
+              Smarter Decisions.
             </h2>
-            <p className="text-gray-300 text-sm md:text-base max-w-xl">
-              Explore 100+ verified quality cars with instant auto-suggestions, fuzzy match intelligence, and personalized relevance ranking.
+            <h2 className="text-orange-400 text-3xl sm:text-5xl font-black tracking-tight">
+              Real-World Demand Pricing.
+            </h2>
+            <p className="text-gray-300 text-sm md:text-base max-w-xl mt-2">
+              Explore verified quality cars with instant auto-suggestions, predictive typing, and regional dynamic market pricing.
             </p>
           </div>
         </div>
@@ -64,9 +75,17 @@ const Hero = () => {
               <Sparkles className="h-4 w-4 text-blue-600 animate-pulse" />
               <span>Smart Car Finder (Auto-Suggestions & Predictive Search)</span>
             </label>
-            <span className="text-xs text-blue-600 font-medium hidden sm:inline">
-              100 Cars Available
-            </span>
+
+            {/* Location Switcher Pill */}
+            <button
+              type="button"
+              onClick={openLocationDrawer}
+              className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200/80 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 shadow-xs"
+            >
+              <span>{selectedPreset.icon}</span>
+              <span className="truncate max-w-[120px]">{selectedPreset.cityName.split("/")[0]}</span>
+              <TrendingUp className="w-3.5 h-3.5 text-blue-600 ml-0.5" />
+            </button>
           </div>
 
           {/* Predictive Search Input Component */}
