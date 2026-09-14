@@ -92,7 +92,6 @@ const CarDetailsPage = () => {
         const data = await getcarByid(id as string);
         if (data) {
           setCarDetails(data);
-<<<<<<< HEAD
           const est = await getMaintenanceEstimateForCar(id as string, {
             brand: data.title || "Maruti",
             model: data.title || "Car",
@@ -101,58 +100,6 @@ const CarDetailsPage = () => {
             fuel: data.specs?.fuel || "Petrol",
           });
           setMaintenanceEstimate(est);
-        } else {
-          // Fallback mock details if backend ID not found
-          const fallbackData = {
-            id: id,
-            title: "2023 Maruti FRONX DELTA PLUS 1.2L AGS",
-            images: [
-              "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-              "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-              "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg",
-            ],
-            price: "₹7,80,000",
-            basePriceNumeric: 780000,
-            bodyType: "SUV",
-            emi: "₹15,245/month",
-            location: selectedPreset.cityName,
-            specs: {
-              year: 2023,
-              km: "10,048 km",
-              fuel: "Petrol",
-              transmission: "Automatic",
-              owner: "1st owner",
-              insurance: "Valid till 2026",
-            },
-            features: [
-              "Power Steering",
-              "Power Windows",
-              "Automatic Climate Control",
-              "Dual Airbags",
-              "ABS with EBD",
-              "Alloy Wheels",
-              "Touchscreen Infotainment",
-            ],
-            highlights: [
-              "Single owner non-accidental vehicle",
-              "140-point inspection certified by Cars24",
-              "7-day money-back guarantee",
-              "1-year warranty coverage",
-            ],
-          };
-          setCarDetails(fallbackData);
-          const est = await getMaintenanceEstimateForCar(id as string, {
-            brand: fallbackData.title,
-            model: "FRONX",
-            year: 2023,
-            km: "10048",
-            fuel: "Petrol",
-          });
-          setMaintenanceEstimate(est);
-=======
-          setLoading(false);
-          return;
->>>>>>> feature/referal-system
         }
       } catch (error) {
         console.warn("Error fetching car, using fallback:", error);
@@ -400,7 +347,6 @@ const CarDetailsPage = () => {
                     <span>View Market Factors</span>
                   </button>
                 </div>
-<<<<<<< HEAD
                 {/* Pricing Rationale Detail */}
                 {pricingResult && (
                   <div className="mt-4 pt-3 border-t border-blue-100/60 text-xs text-blue-900 space-y-1.5">
@@ -418,27 +364,10 @@ const CarDetailsPage = () => {
                     </div>
                   </div>
                 )}
-=======
->>>>>>> feature/referal-system
               </div>
 
               {/* Maintenance Cost Estimator Section */}
               <div className="mt-6 p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
-                <MaintenanceCard
-                  initialEstimate={maintenanceEstimate || undefined}
-                  carTitle={carDetails.title}
-                  brand={carDetails.title || "Maruti"}
-                  model={carDetails.title || "Car"}
-                  year={carDetails.specs?.year || 2020}
-                  km={carDetails.specs?.km || 30000}
-                  fuel={carDetails.specs?.fuel || "Petrol"}
-                  showCustomizer={true}
-                />
-              </div>
-              </div>
-
-              {/* Maintenance Cost Estimator Section */}
-              <div className="mt-6">
                 <MaintenanceCard
                   initialEstimate={maintenanceEstimate || undefined}
                   carTitle={carDetails.title}

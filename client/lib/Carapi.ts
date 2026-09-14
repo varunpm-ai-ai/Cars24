@@ -27,35 +27,6 @@ export type CarDetails = {
   highlights: string[];
 };
 
-import { getAllCars, getCarById as getLocalCarById } from "./carsData";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://cars24-iq0g.onrender.com/api";
-const BASE_URL = `${API_BASE}/Car`;
-
-export type CarDetails = {
-  id?: string;
-  userId?: string;
-  sellerName?: string;
-  title: string;
-  images: string[];
-  price: string;
-  basePriceNumeric?: number;
-  recommendedPriceNumeric?: number;
-  bodyType?: string;
-  emi: string;
-  location: string;
-  specs: {
-    year: number;
-    km: string;
-    fuel: string;
-    transmission: string;
-    owner: string;
-    insurance: string;
-  };
-  features: string[];
-  highlights: string[];
-};
-
 export const normalizeCarData = (rawData: any): CarDetails | null => {
   if (!rawData) return null;
 

@@ -24,11 +24,8 @@ import {
   Lock,
   ShieldCheck,
   Tag,
-  MapPin,
   ExternalLink,
-<<<<<<< HEAD
   Bell,
-=======
   Wallet,
   Gift,
   Copy,
@@ -40,8 +37,7 @@ import {
   ArrowUpRight,
   Sparkles,
   Building2,
-  HelpCircle,
->>>>>>> feature/referal-system
+  MapPin,
 } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
@@ -209,23 +205,19 @@ export default function ProfilePage() {
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div className="flex items-center space-x-2">
-              <Link
-                href="/profile/notifications"
-                className="py-2.5 px-4 bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold rounded-xl transition-colors flex items-center space-x-1.5 self-start sm:self-auto shadow-sm"
-              >
-                <Bell className="w-4 h-4" />
-                <span>Notification Settings</span>
-              </Link>
-=======
             <div className="flex items-center gap-3">
               <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/15 text-center">
                 <p className="text-[10px] uppercase font-bold text-blue-200">Points Balance</p>
                 <p className="text-xl font-black text-orange-400">{walletSummary?.currentBalance ?? 0} <span className="text-xs text-white">pts</span></p>
               </div>
 
->>>>>>> feature/referal-system
+              <Link
+                href="/profile/notifications"
+                className="py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-colors border border-white/20 flex items-center space-x-1.5 self-start sm:self-auto"
+              >
+                <Bell className="w-4 h-4 text-orange-400" />
+                <span className="hidden md:inline">Notifications</span>
+              </Link>
               <button
                 onClick={() => signOut()}
                 className="py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-colors border border-white/20 flex items-center space-x-1.5 self-start sm:self-auto"
