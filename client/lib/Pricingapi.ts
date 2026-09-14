@@ -88,7 +88,7 @@ export const calculateRecommendedPrice = async (
   const diff = recPrice - base;
   const pct = Math.round((compositeMultiplier - 1.0) * 100);
 
-  const badge = pct >= 10 ? `🔥 High Market Demand (+${pct}%)` : pct > 0 ? `📈 Favorable Market Trend (+${pct}%)` : `💡 Smart Value Buyer Price (${pct}%)`;
+  const badge = pct >= 10 ? `High Market Demand (+${pct}%)` : pct > 0 ? `Favorable Market Trend (+${pct}%)` : `Fair Market Value (${pct}%)`;
 
   return {
     basePrice: base,

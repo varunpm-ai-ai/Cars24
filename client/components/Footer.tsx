@@ -16,7 +16,7 @@ export const Footer = () => {
               <span className="text-orange-500 font-bold text-lg">24</span>
             </div>
             <p className="text-sm text-slate-400">
-              India's leading platform to buy, sell, and estimate vehicle upkeep expenses with AI transparency.
+              India's leading platform to buy, sell, and estimate vehicle upkeep expenses with market transparency.
             </p>
             <div className="flex items-center space-x-2 text-xs text-emerald-400">
               <ShieldCheck className="w-4 h-4" />
@@ -56,12 +56,12 @@ export const Footer = () => {
           {/* Tools */}
           <div>
             <h4 className="font-bold text-white text-sm mb-4 uppercase tracking-wider">
-              Smart Tools
+              Calculator Tools
             </h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <Link href="/maintenance-estimator" className="hover:text-white transition-colors">
-                  Predictive Upkeep Calculator
+                  Maintenance Cost Estimator
                 </Link>
               </li>
               <li>
@@ -102,7 +102,7 @@ export const Footer = () => {
         <div className="pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} CARS24 Financial & Maintenance Services. All rights reserved.</p>
           <p className="flex items-center space-x-1">
-            <span>Built with precision for smart car buyers</span>
+            <span>Built for car buyers and sellers</span>
           </p>
         </div>
       </div>

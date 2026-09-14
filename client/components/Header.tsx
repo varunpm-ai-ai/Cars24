@@ -98,19 +98,16 @@ const Header = () => {
 
           {/* Right: Location Pill, Notification Center & User Profile Menu */}
           <div className="flex items-center space-x-3 lg:flex-1 lg:justify-end">
-            {/* Dynamic Pricing Location Switcher Button */}
+            {/* Location Switcher Button */}
             <button
               onClick={openLocationDrawer}
-              className="flex items-center space-x-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200/80 rounded-full text-xs font-bold transition-all shadow-xs"
-              title="Click to change location or market season"
+              className="flex items-center space-x-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold transition-colors"
+              title="Click to change location"
             >
-              <span className="text-sm">{selectedPreset.icon}</span>
+              <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
               <span className="hidden sm:inline-block max-w-[120px] truncate">
                 {selectedPreset.cityName.split("/")[0]}
               </span>
-              {isGeoFenceActive && (
-                <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-200 animate-pulse" title="Geo-fence Active" />
-              )}
               <ChevronDown className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             </button>
 
@@ -132,7 +129,7 @@ const Header = () => {
                 <div className="inline-flex items-center justify-center p-1 px-2.5 rounded-full border border-gray-200 bg-gray-50 hover:bg-gray-100 text-sm font-medium text-gray-700 transition-colors cursor-pointer">
                   {user ? (
                     <div className="flex items-center space-x-2">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-extrabold flex items-center justify-center text-xs uppercase shadow-xs">
+                      <div className="w-7 h-7 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs uppercase">
                         {user.fullName ? user.fullName.charAt(0) : "U"}
                       </div>
                       <span className="hidden md:inline-block max-w-[100px] truncate font-bold text-xs">
@@ -149,10 +146,10 @@ const Header = () => {
                   )}
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-64 rounded-2xl shadow-xl p-2 border-gray-100">
+              <DropdownMenuContent align="end" className="w-64 rounded-lg shadow-md p-2 border-gray-200">
                 {user ? (
                   <>
-                    <div className="p-3 bg-blue-50/70 rounded-xl mb-1">
+                    <div className="p-3 bg-blue-50 rounded-md mb-1">
                       <p className="text-xs font-extrabold text-blue-900 truncate">
                         {user.fullName}
                       </p>

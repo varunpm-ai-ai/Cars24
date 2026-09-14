@@ -103,13 +103,11 @@ export default function NotificationPreferencesPage() {
         </div>
 
         {/* FCM Web Push Permission Status Banner */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-8 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
-
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8 overflow-hidden relative">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-start space-x-4">
               <div
-                className={`p-3.5 rounded-2xl border ${
+                className={`p-3.5 rounded-xl border ${
                   permissionStatus === "granted"
                     ? "bg-emerald-50 text-emerald-600 border-emerald-200"
                     : permissionStatus === "denied"
@@ -156,7 +154,7 @@ export default function NotificationPreferencesPage() {
 
                 {fcmToken && (
                   <div className="mt-3 bg-gray-50 border border-gray-200 rounded-lg p-2 flex items-center gap-2 max-w-xl text-[11px] font-mono text-gray-500 overflow-hidden">
-                    <Radio className="h-3.5 w-3.5 text-emerald-500 shrink-0 animate-pulse" />
+                    <Radio className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                     <span className="truncate">FCM Token: {fcmToken}</span>
                   </div>
                 )}
@@ -166,9 +164,8 @@ export default function NotificationPreferencesPage() {
             {permissionStatus !== "granted" && (
               <button
                 onClick={requestPermission}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 text-sm"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-md shadow-sm transition-all flex items-center justify-center gap-2 shrink-0 text-sm"
               >
-                <Sparkles className="h-4 w-4" />
                 Enable Web Push
               </button>
             )}
@@ -179,10 +176,10 @@ export default function NotificationPreferencesPage() {
           {/* Main Controls: Events & Channels (2 cols) */}
           <div className="lg:col-span-2 space-y-8">
             {/* Section 1: Event Triggers */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <div className="border-b border-gray-100 pb-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-blue-600" />
+                  <Bell className="h-5 w-5 text-blue-600" />
                   Key Event Triggers
                 </h2>
                 <p className="text-xs text-gray-500 mt-0.5">
@@ -372,10 +369,10 @@ export default function NotificationPreferencesPage() {
                     onChange={(e) => setTestEventType(e.target.value)}
                     className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-orange-500 focus:outline-none"
                   >
-                    <option value="appointment_confirmation">📅 Appointment Confirmation</option>
-                    <option value="bid_update">🔨 Bid Update / Outbid Alert</option>
-                    <option value="price_drop">🏷️ Price Drop Alert</option>
-                    <option value="new_message">💬 New Chat Message</option>
+                    <option value="appointment_confirmation">Appointment Confirmation</option>
+                    <option value="bid_update">Bid Update / Outbid Alert</option>
+                    <option value="price_drop">Price Drop Alert</option>
+                    <option value="new_message">New Chat Message</option>
                   </select>
                 </div>
 

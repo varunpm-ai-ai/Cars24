@@ -100,7 +100,7 @@ export const NotificationCenter: React.FC = () => {
       >
         <Bell className="h-5 w-5" />
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[10px] font-bold text-white shadow-sm animate-pulse">
+          <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[10px] font-bold text-white shadow-sm">
             {unreadCount > 9 ? "9+" : unreadCount}
           </span>
         )}
@@ -108,12 +108,12 @@ export const NotificationCenter: React.FC = () => {
 
       <DropdownMenuContent
         align="end"
-        className="w-80 sm:w-96 p-0 shadow-2xl rounded-2xl border border-gray-100 overflow-hidden bg-white z-50"
+        className="w-80 sm:w-96 p-0 shadow-md rounded-lg border border-gray-200 overflow-hidden bg-white z-50"
       >
         {/* Header */}
-        <div className="p-4 bg-gradient-to-r from-blue-900 to-indigo-900 text-white flex items-center justify-between">
+        <div className="p-4 bg-blue-600 text-white flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Bell className="h-5 w-5 text-orange-400" />
+            <Bell className="h-5 w-5 text-white" />
             <h3 className="font-semibold text-base">Notifications</h3>
             {unreadCount > 0 && (
               <span className="bg-orange-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full">
@@ -126,7 +126,7 @@ export const NotificationCenter: React.FC = () => {
               <button
                 onClick={markAllAsRead}
                 title="Mark all as read"
-                className="text-xs text-blue-200 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2 py-1 rounded-md transition-colors"
+                className="text-xs text-blue-100 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2 py-1 rounded-md transition-colors"
               >
                 <CheckCheck className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Mark read</span>
@@ -134,7 +134,7 @@ export const NotificationCenter: React.FC = () => {
             )}
             <Link
               href="/profile/notifications"
-              className="p-1.5 rounded-md hover:bg-white/10 text-blue-200 hover:text-white transition-colors"
+              className="p-1.5 rounded-md hover:bg-white/10 text-blue-100 hover:text-white transition-colors"
               title="Notification Preferences"
             >
               <Settings className="h-4 w-4" />
@@ -146,7 +146,6 @@ export const NotificationCenter: React.FC = () => {
         {permissionStatus !== "granted" && (
           <div className="bg-amber-50 border-b border-amber-100 p-3 flex items-center justify-between text-xs text-amber-800">
             <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-amber-600 shrink-0" />
               <span>Enable push notifications for instant alerts.</span>
             </div>
             <button
@@ -162,10 +161,10 @@ export const NotificationCenter: React.FC = () => {
         <div className="flex items-center gap-1.5 p-2 bg-gray-50 border-b border-gray-100 overflow-x-auto text-xs no-scrollbar">
           {[
             { id: "all", label: "All" },
-            { id: "appointment_confirmation", label: "📅 Appointments" },
-            { id: "bid_update", label: "🔨 Bids" },
-            { id: "price_drop", label: "🏷️ Price Drops" },
-            { id: "new_message", label: "💬 Messages" },
+            { id: "appointment_confirmation", label: "Appointments" },
+            { id: "bid_update", label: "Bids" },
+            { id: "price_drop", label: "Price Drops" },
+            { id: "new_message", label: "Messages" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -242,27 +241,27 @@ export const NotificationCenter: React.FC = () => {
               onClick={() =>
                 sendTestNotification(
                   "appointment_confirmation",
-                  "Appointment Confirmed! 📅",
+                  "Appointment Confirmed!",
                   "Your test drive appointment for Honda City is scheduled for tomorrow."
                 )
               }
               className="px-2 py-1 bg-white hover:bg-gray-100 border border-gray-200 rounded text-gray-700 font-medium transition-colors"
               title="Test Appointment Push"
             >
-              📅 Test
+              Appt Test
             </button>
             <button
               onClick={() =>
                 sendTestNotification(
                   "price_drop",
-                  "Price Drop Alert! 🏷️",
+                  "Price Drop Alert!",
                   "Maruti Swift in your wishlist dropped by ₹15,000!"
                 )
               }
               className="px-2 py-1 bg-white hover:bg-gray-100 border border-gray-200 rounded text-gray-700 font-medium transition-colors"
               title="Test Price Drop Push"
             >
-              🏷️ Test
+              Price Test
             </button>
             <Link
               href="/profile/notifications"

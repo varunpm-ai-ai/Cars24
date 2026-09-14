@@ -18,17 +18,7 @@ const brands = [
 export default function CarBrands() {
   return (
     <div className="py-8 mt-4">
-      <div className="text-center mb-6">
-        <div className="inline-flex items-center justify-center mb-4">
-          <div className="h-px bg-gray-200 w-10" />
-          <div className="px-4">
-            <div className="flex items-center justify-center bg-orange-500 rounded-full p-2">
-              <Car size={24} className="text-white" />
-            </div>
-          </div>
-          <div className="h-px bg-gray-200 w-10" />
-        </div>
-      </div>
+      <h2 className="text-xl font-bold text-gray-900 text-center mb-6">Explore Popular Brands</h2>
 
       <div className="flex flex-wrap justify-center gap-4 md:gap-8">
         {brands.map((brand) => (

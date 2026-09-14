@@ -92,40 +92,40 @@ const SellCarPage = () => {
         <div className="max-w-4xl mx-auto">
           {/* Page Heading */}
           <div className="mb-8 text-center sm:text-left">
-            <h1 className="text-3xl font-black text-gray-900 tracking-tight">
+            <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
               Sell Your Car On Cars24
             </h1>
             <p className="text-xs text-gray-500 mt-1">
-              List your car directly, get real-time dynamic market recommendations, & receive instant buyer offers.
+              List your car directly, get real-time market price estimates, & receive instant buyer offers.
             </p>
           </div>
 
           {/* Auth Gate for Unauthenticated Users */}
           {!user ? (
-            <div className="bg-white rounded-3xl shadow-xl border-2 border-blue-500/20 p-8 sm:p-12 text-center space-y-5 max-w-2xl mx-auto my-6">
-              <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto shadow-inner">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 sm:p-12 text-center space-y-5 max-w-2xl mx-auto my-6">
+              <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto">
                 <Lock className="w-8 h-8" />
               </div>
 
               <div>
-                <h2 className="text-2xl font-black text-gray-900">
+                <h2 className="text-2xl font-bold text-gray-900">
                   Authentication Required to Sell
                 </h2>
                 <p className="text-xs text-gray-600 max-w-md mx-auto mt-2 leading-relaxed">
-                  Each vehicle listed on Cars24 belongs to a verified user account. Log in or create your account to list your car with dynamic regional price insights.
+                  Each vehicle listed on Cars24 belongs to a verified user account. Log in or create your account to list your car with regional price insights.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
                 <button
                   onClick={() => openAuthModal("login")}
-                  className="py-3 px-6 bg-blue-600 text-white font-extrabold text-xs rounded-xl shadow-md hover:bg-blue-700 transition-all"
+                  className="py-2.5 px-6 bg-blue-600 text-white font-bold text-xs rounded-md shadow-sm hover:bg-blue-700 transition-colors"
                 >
                   Log In to Start Listing
                 </button>
                 <button
                   onClick={() => openAuthModal("signup")}
-                  className="py-3 px-6 bg-orange-500 text-white font-extrabold text-xs rounded-xl shadow-md hover:bg-orange-600 transition-all"
+                  className="py-2.5 px-6 bg-orange-500 text-white font-bold text-xs rounded-md shadow-sm hover:bg-orange-600 transition-colors"
                 >
                   Create New Account
                 </button>
@@ -135,7 +135,7 @@ const SellCarPage = () => {
             /* Authenticated Listing Wizard */
             <div className="space-y-6">
               {/* Stepper Header */}
-              <div className="w-full py-4 bg-white rounded-2xl p-4 shadow-xs border border-gray-100">
+              <div className="w-full py-4 bg-white rounded-xl p-4 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between">
                   {steps.map((step, index) => (
                     <React.Fragment key={step.id}>
@@ -181,7 +181,7 @@ const SellCarPage = () => {
               </div>
 
               {/* Form Content */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-200">
                 <Carform
                   carDetails={carDetails}
                   updateCarDetails={updateCarDetails}

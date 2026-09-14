@@ -36,7 +36,7 @@ export const CITIES: CityLocation[] = [
     lng: 72.8777,
     searchKeywords: ["mumbai", "kurla", "andheri", "lower parel", "thane", "navi mumbai", "kerala"],
     region: "MonsoonMetro",
-    icon: "🌧️",
+    icon: "",
     description: "High demand for SUVs & High Ground Clearance cars due to monsoon waterlogging.",
   },
   {
@@ -47,7 +47,7 @@ export const CITIES: CityLocation[] = [
     lng: 77.2090,
     searchKeywords: ["delhi", "new delhi", "rohini", "gurugram", "noida", "karol bagh", "south ex", "gurgaon"],
     region: "MetroFuelSpike",
-    icon: "⚡",
+    icon: "",
     description: "Surge in EVs, CNG & compact hatchbacks. High commuting demand.",
   },
   {
@@ -58,7 +58,7 @@ export const CITIES: CityLocation[] = [
     lng: 77.5946,
     searchKeywords: ["bengaluru", "bangalore", "whitefield", "koramangala", "hebbal", "indiranagar"],
     region: "MetroFuelSpike",
-    icon: "🚗",
+    icon: "",
     description: "High demand for Automatic Hatchbacks and Electric Vehicles.",
   },
   {
@@ -69,7 +69,7 @@ export const CITIES: CityLocation[] = [
     lng: 78.4867,
     searchKeywords: ["hyderabad", "gachibowli", "hitec city", "jubilee hills", "secunderabad"],
     region: "MetroFuelSpike",
-    icon: "🏙️",
+    icon: "",
     description: "High demand for tech commuter sedans and premium SUVs.",
   },
   {
@@ -80,7 +80,7 @@ export const CITIES: CityLocation[] = [
     lng: 73.8567,
     searchKeywords: ["pune", "baner", "viman nagar", "hinjewadi", "kothrud"],
     region: "Suburban",
-    icon: "🚘",
+    icon: "",
     description: "Popular for compact SUVs and mileage-efficient hatchbacks.",
   },
   {
@@ -91,7 +91,7 @@ export const CITIES: CityLocation[] = [
     lng: 80.2707,
     searchKeywords: ["chennai", "guindy", "anna nagar", "velachery", "t nagar"],
     region: "Coastal",
-    icon: "🌊",
+    icon: "",
     description: "Strong market for durable sedans and automatic hatchbacks.",
   },
   {
@@ -102,7 +102,7 @@ export const CITIES: CityLocation[] = [
     lng: 77.1892,
     searchKeywords: ["manali", "himachal", "uk", "shimla", "hilly"],
     region: "Hilly",
-    icon: "⛰️",
+    icon: "",
     description: "High demand for 4x4 / AWD SUVs and Off-roaders for steep grade climbing.",
   },
   {
@@ -113,7 +113,7 @@ export const CITIES: CityLocation[] = [
     lng: 74.1240,
     searchKeywords: ["goa", "panaji", "miramar", "coastal"],
     region: "Coastal",
-    icon: "🏖️",
+    icon: "",
     description: "Steady demand for compact cruisers, convertibles, and EVs.",
   },
   {
@@ -124,7 +124,7 @@ export const CITIES: CityLocation[] = [
     lng: 78.9629,
     searchKeywords: ["all", "national", "india", "standard"],
     region: "Standard",
-    icon: "🇮🇳",
+    icon: "",
     description: "Shows all listings across India without geographical restrictions.",
   },
 ];

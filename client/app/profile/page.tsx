@@ -185,42 +185,42 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 pb-16">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-blue-950 via-indigo-900 to-blue-900 text-white py-10">
+      <div className="bg-slate-900 text-white py-8">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-orange-400 to-amber-300 text-blue-950 font-black text-2xl flex items-center justify-center shadow-xl border-2 border-white/20 uppercase shrink-0">
+              <div className="w-14 h-14 rounded-full bg-blue-600 text-white font-bold text-xl flex items-center justify-center border border-slate-700 uppercase shrink-0">
                 {user.fullName ? user.fullName.charAt(0) : "U"}
               </div>
               <div>
                 <div className="flex items-center space-x-2 flex-wrap gap-y-1">
-                  <h1 className="text-2xl font-black text-white">{user.fullName}</h1>
-                  <span className="bg-green-500/20 text-green-300 border border-green-400/30 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3 text-green-400" /> Multi-Tenant Account ({activeTenant?.tenantName || "Cars24 Standard"})
+                  <h1 className="text-2xl font-bold text-white">{user.fullName}</h1>
+                  <span className="bg-green-900/60 text-green-300 border border-green-700/50 text-[10px] font-semibold px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3 text-green-400" /> Account ({activeTenant?.tenantName || "Cars24 Standard"})
                   </span>
                 </div>
-                <p className="text-xs text-blue-200 mt-1">
-                  {user.email} • {user.phone || "No phone linked"} • Code: <span className="font-mono font-bold text-orange-300">{walletSummary?.referralCode || user.referralCode || "—"}</span>
+                <p className="text-xs text-slate-300 mt-1">
+                  {user.email} • {user.phone || "No phone linked"} • Code: <span className="font-mono font-bold text-orange-400">{walletSummary?.referralCode || user.referralCode || "—"}</span>
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/15 text-center">
-                <p className="text-[10px] uppercase font-bold text-blue-200">Points Balance</p>
-                <p className="text-xl font-black text-orange-400">{walletSummary?.currentBalance ?? 0} <span className="text-xs text-white">pts</span></p>
+              <div className="bg-slate-800 px-4 py-2 rounded-md border border-slate-700 text-center">
+                <p className="text-[10px] uppercase font-bold text-slate-400">Points Balance</p>
+                <p className="text-xl font-bold text-orange-400">{walletSummary?.currentBalance ?? 0} <span className="text-xs text-white">pts</span></p>
               </div>
 
               <Link
                 href="/profile/notifications"
-                className="py-2.5 px-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-colors border border-white/20 flex items-center space-x-1.5 self-start sm:self-auto"
+                className="py-2 px-3 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-md transition-colors border border-slate-700 flex items-center space-x-1.5 self-start sm:self-auto"
               >
                 <Bell className="w-4 h-4 text-orange-400" />
                 <span className="hidden md:inline">Notifications</span>
               </Link>
               <button
                 onClick={() => signOut()}
-                className="py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-colors border border-white/20 flex items-center space-x-1.5 self-start sm:self-auto"
+                className="py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-md transition-colors border border-slate-700 flex items-center space-x-1.5 self-start sm:self-auto"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Sign Out</span>
@@ -232,12 +232,12 @@ export default function ProfilePage() {
 
       <main className="container mx-auto px-4 py-8 max-w-6xl space-y-6">
         {/* Navigation Tabs */}
-        <div className="flex border-b border-gray-200 bg-white rounded-2xl p-1.5 shadow-xs overflow-x-auto">
+        <div className="flex border-b border-gray-200 bg-white rounded-lg p-1.5 shadow-sm overflow-x-auto">
           <button
             onClick={() => setActiveTab("wallet")}
-            className={`flex-1 min-w-[140px] py-3 text-xs font-extrabold rounded-xl transition-all flex items-center justify-center space-x-2 ${
+            className={`flex-1 min-w-[140px] py-2.5 text-xs font-bold rounded-md transition-all flex items-center justify-center space-x-2 ${
               activeTab === "wallet"
-                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md"
+                ? "bg-blue-600 text-white shadow-sm"
                 : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
             }`}
           >
@@ -288,100 +288,94 @@ export default function ProfilePage() {
             {/* Wallet Stat Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Card 1: Balance */}
-              <div className="bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 text-white rounded-3xl p-6 shadow-lg border border-blue-700/50 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                  <Wallet className="w-24 h-24" />
-                </div>
+              <div className="bg-slate-900 text-white rounded-xl p-5 shadow-sm border border-slate-800 flex flex-col justify-between relative overflow-hidden">
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] uppercase font-bold text-blue-200">Current Wallet Balance</span>
-                    <Sparkles className="w-4 h-4 text-amber-300" />
+                    <span className="text-[11px] uppercase font-bold text-slate-400">Current Wallet Balance</span>
                   </div>
-                  <p className="text-3xl font-black text-amber-300 mt-2">
-                    {walletSummary?.currentBalance ?? 0} <span className="text-sm font-semibold text-white">pts</span>
+                  <p className="text-3xl font-bold text-amber-400 mt-2">
+                    {walletSummary?.currentBalance ?? 0} <span className="text-sm font-normal text-white">pts</span>
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center text-xs">
-                  <span className="text-blue-200">INR Discount Value:</span>
-                  <span className="font-extrabold text-green-400">₹ {(walletSummary?.equivalentInINR ?? 0).toLocaleString("en-IN")}</span>
+                <div className="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+                  <span className="text-slate-400">INR Discount Value:</span>
+                  <span className="font-bold text-green-400">₹ {(walletSummary?.equivalentInINR ?? 0).toLocaleString("en-IN")}</span>
                 </div>
               </div>
 
               {/* Card 2: Lifetime Earned */}
-              <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
+              <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col justify-between">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] uppercase font-extrabold text-gray-500">Lifetime Points Earned</span>
-                  <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <span className="text-[11px] uppercase font-semibold text-gray-500">Lifetime Points Earned</span>
+                  <div className="w-8 h-8 rounded-md bg-green-50 text-green-600 flex items-center justify-center">
                     <ArrowDownLeft className="w-4 h-4" />
                   </div>
                 </div>
-                <p className="text-2xl font-black text-gray-900 mt-2">
-                  {walletSummary?.lifetimeEarned ?? 0} <span className="text-xs text-gray-400">pts</span>
+                <p className="text-2xl font-bold text-gray-900 mt-2">
+                  {walletSummary?.lifetimeEarned ?? 0} <span className="text-xs text-gray-400 font-normal">pts</span>
                 </p>
-                <p className="text-[11px] text-gray-400 mt-3 pt-2 border-t border-gray-50">
+                <p className="text-[11px] text-gray-500 mt-3 pt-2 border-t border-gray-100">
                   Earned via signups, purchases & sales
                 </p>
               </div>
 
               {/* Card 3: Lifetime Redeemed */}
-              <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
+              <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col justify-between">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] uppercase font-extrabold text-gray-500">Points Redeemed</span>
-                  <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+                  <span className="text-[11px] uppercase font-semibold text-gray-500">Points Redeemed</span>
+                  <div className="w-8 h-8 rounded-md bg-orange-50 text-orange-600 flex items-center justify-center">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
-                <p className="text-2xl font-black text-gray-900 mt-2">
-                  {walletSummary?.lifetimeRedeemed ?? 0} <span className="text-xs text-gray-400">pts</span>
+                <p className="text-2xl font-bold text-gray-900 mt-2">
+                  {walletSummary?.lifetimeRedeemed ?? 0} <span className="text-xs text-gray-400 font-normal">pts</span>
                 </p>
-                <p className="text-[11px] text-gray-400 mt-3 pt-2 border-t border-gray-50">
+                <p className="text-[11px] text-gray-500 mt-3 pt-2 border-t border-gray-100">
                   Applied as vehicle booking discounts
                 </p>
               </div>
 
               {/* Card 4: Friends Invited */}
-              <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
+              <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col justify-between">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] uppercase font-extrabold text-gray-500">Successful Referrals</span>
-                  <div className="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center">
+                  <span className="text-[11px] uppercase font-semibold text-gray-500">Successful Referrals</span>
+                  <div className="w-8 h-8 rounded-md bg-purple-50 text-purple-600 flex items-center justify-center">
                     <Gift className="w-4 h-4" />
                   </div>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-gray-900 mt-2">
-                    {walletSummary?.successfulReferrals ?? 0} <span className="text-xs text-gray-400">buyers/sellers</span>
+                  <p className="text-2xl font-bold text-gray-900 mt-2">
+                    {walletSummary?.successfulReferrals ?? 0} <span className="text-xs text-gray-400 font-normal">buyers/sellers</span>
                   </p>
                   <p className="text-[11px] text-gray-500 mt-1 font-medium">
                     Total Signups: {walletSummary?.referralCount ?? 0}
                   </p>
                 </div>
-                <p className="text-[11px] text-purple-600 font-bold mt-2 pt-2 border-t border-gray-50">
-                  Organic growth rewarded
+                <p className="text-[11px] text-purple-600 font-semibold mt-2 pt-2 border-t border-gray-100">
+                  Referral rewards active
                 </p>
               </div>
             </div>
 
             {/* Referral Code & Sharing Card */}
-            <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 -mt-8 -mr-8 w-48 h-48 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="bg-blue-600 rounded-xl p-6 text-white shadow-sm relative overflow-hidden">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
                 <div className="space-y-2 max-w-xl">
-                  <div className="inline-flex items-center gap-1.5 bg-black/20 text-orange-100 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
-                    <Gift className="w-3.5 h-3.5" /> Organic Referral Program
+                  <div className="inline-flex items-center gap-1.5 bg-blue-700 text-blue-100 text-[10px] font-semibold px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                    <Gift className="w-3.5 h-3.5" /> Referral Program
                   </div>
-                  <h3 className="text-2xl font-black text-white leading-tight">
+                  <h3 className="text-xl font-bold text-white leading-tight">
                     Invite Friends & Both Earn Points on Every Car Purchase or Sale!
                   </h3>
-                  <p className="text-xs text-orange-100 leading-relaxed">
-                    Share your unique referral code. When a friend signs up and completes a car purchase or valuation under your tenant, you both get rewarded with points in your dedicated wallet!
+                  <p className="text-xs text-blue-100 leading-relaxed">
+                    Share your unique referral code. When a friend signs up and completes a car purchase or valuation, you both get rewarded with points!
                   </p>
                 </div>
 
                 {/* Code display box */}
-                <div className="bg-white/15 backdrop-blur-md rounded-2xl p-4 border border-white/30 text-center space-y-3 shrink-0 w-full md:w-auto min-w-[280px]">
-                  <p className="text-[10px] uppercase font-black text-orange-100 tracking-wider">Your Unique Referral Code</p>
-                  <div className="bg-white text-gray-900 rounded-xl py-3 px-6 font-mono font-black text-2xl tracking-widest shadow-inner select-all flex items-center justify-center gap-2">
+                <div className="bg-blue-700 rounded-lg p-4 border border-blue-500 text-center space-y-3 shrink-0 w-full md:w-auto min-w-[260px]">
+                  <p className="text-[10px] uppercase font-semibold text-blue-200 tracking-wider">Your Unique Referral Code</p>
+                  <div className="bg-white text-gray-900 rounded-md py-2.5 px-5 font-mono font-bold text-xl tracking-widest shadow-inner select-all flex items-center justify-center gap-2">
                     <span>{walletSummary?.referralCode || "REF-C24"}</span>
                   </div>
 
@@ -744,7 +738,7 @@ export default function ProfilePage() {
                       </p>
                       {b.booking?.pointsRedeemed > 0 && (
                         <p className="text-[11px] font-bold text-green-600 mt-1">
-                          🎁 Redeemed {b.booking.pointsRedeemed} pts (Discount: ₹{b.booking.discountAmount})
+                          Redeemed {b.booking.pointsRedeemed} pts (Discount: ₹{b.booking.discountAmount})
                         </p>
                       )}
                     </div>

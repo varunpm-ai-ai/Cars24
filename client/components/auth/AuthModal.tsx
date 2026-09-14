@@ -122,18 +122,16 @@ export const AuthModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md transition-all duration-300 animate-in fade-in">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 transition-all duration-300">
       <div
-        className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 transform transition-all duration-300 scale-100 max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform transition-all duration-300 max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="relative bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800 p-6 text-white overflow-hidden shrink-0">
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none" />
-
+        <div className="relative bg-blue-600 p-6 text-white overflow-hidden shrink-0">
           <button
             onClick={closeAuthModal}
-            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-md transition-colors"
             aria-label="Close auth dialog"
           >
             <X className="w-5 h-5" />

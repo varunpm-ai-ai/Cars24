@@ -110,9 +110,9 @@ export const MaintenanceCard: React.FC<MaintenanceCardProps> = ({
   const badgeStyle = getRiskBadgeStyle(estimate.riskLevel);
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6 text-white relative overflow-hidden">
+      <div className="bg-slate-900 p-6 text-white relative overflow-hidden">
         <div className="absolute -right-8 -bottom-8 opacity-10 pointer-events-none">
           <Wrench className="w-48 h-48 text-white" />
         </div>
@@ -120,9 +120,8 @@ export const MaintenanceCard: React.FC<MaintenanceCardProps> = ({
         <div className="flex flex-wrap items-center justify-between gap-4 relative z-10">
           <div>
             <div className="flex items-center space-x-2">
-              <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
-              <span className="text-xs uppercase tracking-wider text-amber-400 font-semibold">
-                AI Maintenance Cost Estimator
+              <span className="text-xs uppercase tracking-wider text-blue-400 font-semibold">
+                Maintenance Cost Estimator
               </span>
             </div>
             <h3 className="text-xl font-bold mt-1 text-white">
@@ -135,9 +134,9 @@ export const MaintenanceCard: React.FC<MaintenanceCardProps> = ({
 
           {/* Risk Tag Badge */}
           <div
-            className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-semibold shadow-sm backdrop-blur-sm ${badgeStyle.bg}`}
+            className={`flex items-center space-x-2 px-4 py-2 rounded-md border text-sm font-semibold shadow-sm ${badgeStyle.bg}`}
           >
-            <span className={`w-2.5 h-2.5 rounded-full animate-ping ${badgeStyle.dot}`} />
+            <span className={`w-2.5 h-2.5 rounded-full ${badgeStyle.dot}`} />
             <ShieldAlert className={`w-4 h-4 ${badgeStyle.iconColor}`} />
             <span>{estimate.riskTag}</span>
           </div>

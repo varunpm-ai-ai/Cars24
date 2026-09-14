@@ -155,7 +155,7 @@ export const InteractiveLocationMap: React.FC = () => {
           <h4 style="margin: 6px 0 2px 0; font-size: 13px; font-weight: bold; color: #0f172a;">${hub.name}</h4>
           <p style="margin:0; font-size: 11px; color: #475569;">${hub.address}</p>
           <a href="https://www.google.com/maps/dir/?api=1&destination=${hub.lat},${hub.lng}" target="_blank" style="display:inline-block; margin-top:8px; font-size:11px; color:#2563eb; font-weight:bold; text-decoration:none;">
-            📍 Get Directions &rarr;
+            Get Directions &rarr;
           </a>
         </div>
       `;
@@ -194,20 +194,20 @@ export const InteractiveLocationMap: React.FC = () => {
   )}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden my-8">
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden my-8">
       {/* Top Banner Header */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 text-white p-6 md:p-8">
+      <div className="bg-slate-900 text-white p-6 md:p-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center space-x-2 bg-blue-900/60 text-blue-200 border border-blue-700/50 px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">
               <Compass className="w-3.5 h-3.5" />
-              <span>Interactive Geo-fence Map</span>
+              <span>Location Map</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
               Nearby Cars24 Hubs & Service Centers
             </h2>
             <p className="text-xs md:text-sm text-slate-300 mt-1 max-w-xl">
-              Showing verified Cars24 Mega Refurbishment Labs, Inspection Hubs, and Express Pickup Stations in{" "}
+              Showing verified Cars24 Refurbishment Labs, Inspection Hubs, and Express Pickup Stations in{" "}
               <strong className="text-white font-bold">{selectedPreset.cityName}</strong>.
             </p>
           </div>
@@ -216,7 +216,7 @@ export const InteractiveLocationMap: React.FC = () => {
             <button
               onClick={detectUserLocation}
               disabled={isDetectingLocation}
-              className="flex items-center space-x-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-blue-600/30 transition-all active:scale-95 disabled:opacity-50"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
             >
               <Navigation className={`w-4 h-4 ${isDetectingLocation ? "animate-spin" : ""}`} />
               <span>{isDetectingLocation ? "Detecting GPS..." : "Detect My Location"}</span>
@@ -228,10 +228,10 @@ export const InteractiveLocationMap: React.FC = () => {
         <div className="flex items-center space-x-2 mt-6 overflow-x-auto pb-1 scrollbar-none">
           <button
             onClick={() => setFilterType("All")}
-            className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all whitespace-nowrap ${
               filterType === "All"
-                ? "bg-white text-blue-950 shadow-md"
-                : "bg-white/10 text-white hover:bg-white/20"
+                ? "bg-white text-slate-900"
+                : "bg-slate-800 text-slate-200 hover:bg-slate-700"
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -240,10 +240,10 @@ export const InteractiveLocationMap: React.FC = () => {
 
           <button
             onClick={() => setFilterType("Mega Hub")}
-            className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all whitespace-nowrap ${
               filterType === "Mega Hub"
-                ? "bg-blue-600 text-white shadow-md"
-                : "bg-white/10 text-white hover:bg-white/20"
+                ? "bg-blue-600 text-white"
+                : "bg-slate-800 text-slate-200 hover:bg-slate-700"
             }`}
           >
             <Building className="w-3.5 h-3.5 text-blue-300" />
@@ -252,10 +252,10 @@ export const InteractiveLocationMap: React.FC = () => {
 
           <button
             onClick={() => setFilterType("Service Center")}
-            className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all whitespace-nowrap ${
               filterType === "Service Center"
-                ? "bg-emerald-600 text-white shadow-md"
-                : "bg-white/10 text-white hover:bg-white/20"
+                ? "bg-emerald-600 text-white"
+                : "bg-slate-800 text-slate-200 hover:bg-slate-700"
             }`}
           >
             <Wrench className="w-3.5 h-3.5 text-emerald-300" />
@@ -264,10 +264,10 @@ export const InteractiveLocationMap: React.FC = () => {
 
           <button
             onClick={() => setFilterType("Pickup Point")}
-            className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all whitespace-nowrap ${
               filterType === "Pickup Point"
-                ? "bg-amber-600 text-white shadow-md"
-                : "bg-white/10 text-white hover:bg-white/20"
+                ? "bg-amber-600 text-white"
+                : "bg-slate-800 text-slate-200 hover:bg-slate-700"
             }`}
           >
             <Package className="w-3.5 h-3.5 text-amber-300" />
@@ -398,15 +398,15 @@ export const InteractiveLocationMap: React.FC = () => {
 
           {/* Floating Selected Hub Card Overlay */}
           {selectedHub && (
-            <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xs bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200/80 z-10 animate-in fade-in slide-in-from-bottom-2">
-              <div className="flex items-center justify-between text-xs font-extrabold text-blue-600 uppercase tracking-wide">
+            <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xs bg-white p-4 rounded-lg shadow-md border border-gray-200 z-10">
+              <div className="flex items-center justify-between text-xs font-bold text-blue-600 uppercase tracking-wide">
                 <span>Selected Destination</span>
                 <span className="bg-blue-600 text-white px-2 py-0.5 rounded-full text-[10px]">
                   {selectedHub.type}
                 </span>
               </div>
 
-              <h4 className="text-sm font-black text-gray-900 mt-1">{selectedHub.name}</h4>
+              <h4 className="text-sm font-bold text-gray-900 mt-1">{selectedHub.name}</h4>
               <p className="text-xs text-gray-600 mt-0.5 line-clamp-2">{selectedHub.address}</p>
 
               <div className="mt-3 flex items-center gap-2">
@@ -414,7 +414,7 @@ export const InteractiveLocationMap: React.FC = () => {
                   href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHub.lat},${selectedHub.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl text-center shadow-md flex items-center justify-center space-x-1.5"
+                  className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-md text-center shadow-sm flex items-center justify-center space-x-1.5 transition-colors"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Navigate with Google Maps</span>

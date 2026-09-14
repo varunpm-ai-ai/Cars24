@@ -190,31 +190,30 @@ function BuyCarContent() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-16">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8 border-b border-blue-900/30">
+      <div className="bg-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-orange-400 mb-1">
-              <Sparkles className="h-4 w-4" />
-              <span>Smart AI Search & Regional Dynamic Pricing Engine</span>
+            <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-400 mb-1">
+              <span>Car Search & Market Pricing</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
               Buy Verified Used Cars in India
             </h1>
             <p className="text-sm text-slate-300 mt-1 max-w-2xl">
-              Instant auto-suggestions, predictive typing, fuzzy matching, and multi-attribute relevance scoring across certified cars.
+              Search auto-suggestions, quick filters, and location-based pricing across certified cars.
             </p>
           </div>
           
           <div className="flex items-center space-x-3">
             <button
               onClick={openLocationDrawer}
-              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-bold transition-all flex items-center space-x-2 shadow-xs"
+              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center space-x-2"
             >
-              <span>{selectedPreset.icon} Region: {selectedPreset.cityName.split("/")[0]}</span>
-              <TrendingUp className="w-3.5 h-3.5 text-orange-400 ml-1" />
+              <MapPin className="w-3.5 h-3.5 text-blue-400" />
+              <span>Region: {selectedPreset.cityName.split("/")[0]}</span>
             </button>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 px-4 border border-white/15 text-xs flex items-center space-x-4">
+            <div className="bg-white/10 rounded-md p-3 px-4 border border-white/15 text-xs flex items-center space-x-4">
               <div className="text-center">
                 <div className="text-lg font-extrabold text-blue-400">{allCars.length}</div>
                 <div className="text-slate-300">Total Cars</div>
@@ -232,7 +231,7 @@ function BuyCarContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         {/* Top Controls: Search Input Bar & Sort Selector */}
-        <div className="mb-6 bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <div className="mb-6 bg-white rounded-md p-4 shadow-sm border border-slate-200 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
           
           {/* Enhanced Search Input */}
           <div className="flex-1">
@@ -269,13 +268,13 @@ function BuyCarContent() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                className="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold px-3 py-2.5 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
               >
-                <option value="relevance">⚡ Relevance (Recommended)</option>
-                <option value="price_asc">💰 Price: Low to High</option>
-                <option value="price_desc">💎 Price: High to Low</option>
-                <option value="km_asc">🏎️ Mileage: Lowest First</option>
-                <option value="year_desc">📅 Year: Newest First</option>
+                <option value="relevance">Relevance (Recommended)</option>
+                <option value="price_asc">Price: Low to High</option>
+                <option value="price_desc">Price: High to Low</option>
+                <option value="km_asc">Mileage: Lowest First</option>
+                <option value="year_desc">Year: Newest First</option>
               </select>
             </div>
           </div>
@@ -559,12 +558,11 @@ function BuyCarContent() {
 
             {/* Fuzzy match alert notice if misspelled query was auto-corrected */}
             {suggestionsResult.fuzzyCorrectedQuery && query && (
-              <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4 flex items-center justify-between">
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 flex items-center justify-between">
                 <div className="flex items-center space-x-3 text-orange-900">
-                  <Sparkles className="h-5 w-5 text-orange-600 animate-bounce" />
                   <div>
                     <p className="text-xs font-semibold">
-                      Auto-Corrected Fuzzy Match Applied:
+                      Auto-Corrected Match Applied:
                     </p>
                     <p className="text-sm">
                       Showing results for "<strong className="text-orange-950 underline">{suggestionsResult.fuzzyCorrectedQuery}</strong>" (matched from your input "{query}")
@@ -574,7 +572,7 @@ function BuyCarContent() {
                 <button
                   type="button"
                   onClick={() => setQuery(suggestionsResult.fuzzyCorrectedQuery!)}
-                  className="bg-orange-600 text-white text-xs font-bold px-3 py-1.5 rounded-xl hover:bg-orange-700 transition-colors"
+                  className="bg-orange-600 text-white text-xs font-bold px-3 py-1.5 rounded-md hover:bg-orange-700 transition-colors"
                 >
                   Use Suggestion
                 </button>
@@ -583,7 +581,7 @@ function BuyCarContent() {
 
             {/* Empty state */}
             {rankedResults.length === 0 ? (
-              <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 text-center my-6">
+              <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-12 text-center my-6">
                 <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Search className="h-8 w-8" />
                 </div>
@@ -610,19 +608,18 @@ function BuyCarContent() {
                   <Link
                     key={car.id}
                     href={`/buy-car/${car.id}`}
-                    className="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-200/80 overflow-hidden transition-all duration-300 flex flex-col group relative"
+                    className="bg-white rounded-lg shadow-sm hover:shadow-md border border-slate-200 overflow-hidden transition-shadow flex flex-col group relative"
                   >
                     {/* Image Thumbnail & Relevance Badge */}
                     <div className="relative h-52 w-full overflow-hidden bg-slate-100">
                       <img
                         src={car.image}
                         alt={car.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover"
                       />
                       
                       {/* Match percentage badge */}
-                      <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-full border border-white/20 shadow-md flex items-center gap-1">
-                        <Sparkles className="h-3 w-3 text-orange-400" />
+                      <div className="absolute top-3 left-3 bg-slate-900/85 text-white text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/20 shadow-sm flex items-center gap-1">
                         <span>{matchPercentage}% Match</span>
                       </div>
 
@@ -634,13 +631,13 @@ function BuyCarContent() {
                           e.stopPropagation();
                           if (!user) openAuthModal("login");
                         }}
-                        className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-md rounded-full hover:bg-white text-slate-600 hover:text-red-500 transition-colors shadow-sm"
+                        className="absolute top-3 right-3 p-2 bg-white rounded-full hover:bg-slate-100 text-slate-600 hover:text-red-500 transition-colors shadow-sm"
                       >
                         <Heart className="h-4 w-4" />
                       </button>
 
                       {/* Location Chip */}
-                      <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                      <div className="absolute bottom-3 left-3 bg-slate-900 text-white text-[11px] font-medium px-2.5 py-0.5 rounded-md flex items-center gap-1">
                         <MapPin className="h-3 w-3 text-red-400" />
                         <span>{car.location}</span>
                       </div>

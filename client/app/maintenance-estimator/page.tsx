@@ -68,11 +68,10 @@ export default function MaintenanceEstimatorPage() {
         <Header />
 
         {/* Hero Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <section className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
           <div className="max-w-7xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>Smart Car Ownership Analytics</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-900/60 text-blue-200 border border-blue-700/50 text-xs font-semibold uppercase tracking-wider">
+              <span>Car Ownership Analytics</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
               Car Maintenance Cost Estimator
@@ -304,7 +303,7 @@ export default function MaintenanceEstimatorPage() {
           </section>
 
           {/* Quick CTA to browse cars */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+          <div className="bg-blue-600 rounded-xl p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
             <div>
               <h3 className="text-2xl font-bold">Ready to find a low-maintenance car?</h3>
               <p className="text-blue-100 text-sm mt-1">
@@ -313,7 +312,7 @@ export default function MaintenanceEstimatorPage() {
             </div>
             <Link
               href="/buy-car"
-              className="px-6 py-3.5 bg-white text-blue-700 font-bold text-sm rounded-xl shadow hover:bg-blue-50 transition-colors flex items-center space-x-2 whitespace-nowrap"
+              className="px-6 py-3 bg-white text-blue-700 font-bold text-sm rounded-md hover:bg-blue-50 transition-colors flex items-center space-x-2 whitespace-nowrap"
             >
               <span>Explore Verified Cars</span>
               <ArrowRight className="w-4 h-4" />

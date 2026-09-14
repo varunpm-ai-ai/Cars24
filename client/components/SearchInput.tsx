@@ -272,7 +272,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
               width: `${coords.width}px`,
               zIndex: 99999,
             }}
-            className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden max-h-[480px] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-150"
+            className="bg-white rounded-md shadow-lg border border-gray-200 overflow-hidden max-h-[480px] overflow-y-auto"
           >
             {/* Fuzzy Correction Suggestion */}
             {suggestions.fuzzyCorrectedQuery && (
@@ -284,7 +284,6 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 className="bg-orange-50 hover:bg-orange-100 border-b border-orange-100 p-3 px-4 flex items-center justify-between cursor-pointer transition-colors"
               >
                 <div className="flex items-center space-x-2 text-sm text-orange-800 font-medium">
-                  <Sparkles className="h-4 w-4 text-orange-600 animate-pulse" />
                   <span>
                     Did you mean{" "}
                     <strong className="underline text-orange-950">
@@ -293,8 +292,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                     ?
                   </span>
                 </div>
-                <span className="text-xs bg-orange-200/70 text-orange-900 px-2 py-0.5 rounded-full font-semibold">
-                  Fuzzy match
+                <span className="text-xs bg-orange-200/70 text-orange-900 px-2 py-0.5 rounded font-semibold">
+                  Suggested match
                 </span>
               </div>
             )}
@@ -317,10 +316,10 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                           e.preventDefault();
                           handleSelectQuery(b.name);
                         }}
-                        className="flex items-center space-x-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 border border-gray-200 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+                        className="flex items-center space-x-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 border border-gray-200 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded transition-colors cursor-pointer"
                       >
                         <span>{b.name}</span>
-                        <span className="bg-gray-200/80 text-gray-600 text-[10px] px-1.5 py-0.2 rounded-full font-normal">
+                        <span className="bg-gray-200/80 text-gray-600 text-[10px] px-1.5 py-0.2 rounded font-normal">
                           {b.count}
                         </span>
                       </button>
@@ -334,7 +333,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-gray-400 px-3 mb-1.5 flex items-center gap-1">
                     <Sliders className="h-3.5 w-3.5" />
-                    <span>Smart Filter Suggestions</span>
+                    <span>Filter Suggestions</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 px-1">
                     {suggestions.attributes.map((attr, idx) => (
@@ -345,9 +344,9 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                           e.preventDefault();
                           handleSelectQuery(attr.label, attr.filter);
                         }}
-                        className="text-left px-3 py-2 rounded-lg text-xs font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 flex items-center justify-between group transition-colors cursor-pointer"
+                        className="text-left px-3 py-2 rounded text-xs font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 flex items-center justify-between group transition-colors cursor-pointer"
                       >
-                        <span>✨ {attr.label}</span>
+                        <span>{attr.label}</span>
                         <CornerDownLeft className="h-3 w-3 opacity-0 group-hover:opacity-100 text-blue-500 transition-opacity" />
                       </button>
                     ))}

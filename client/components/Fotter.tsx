@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
               <span className="text-orange-500 font-black text-xl ml-0.5">24</span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              India's premier marketplace for buying & selling quality used cars with real-time push notifications, maintenance estimates & dynamic market pricing.
+              India's premier marketplace for buying & selling quality used cars with real-time push notifications, maintenance estimates & market pricing.
             </p>
             <div className="flex items-center space-x-2 text-xs font-semibold text-blue-400">
               <ShieldCheck className="w-4 h-4 text-green-400" />
-              <span>Multi-Tenant & AI Dynamic Pricing Verified</span>
+              <span>100% Verified Quality & Inspection</span>
             </div>
           </div>
 

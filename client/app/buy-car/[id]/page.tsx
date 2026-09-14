@@ -272,18 +272,17 @@ const CarDetailsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 pb-16">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800 text-white py-6">
+      <div className="bg-slate-900 text-white py-6">
         <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-bold text-orange-400 uppercase tracking-widest mb-1">
-              <Sparkles className="w-4 h-4" />
-              <span>Cars24 Certified Inspection & Dynamic Valuation</span>
+            <div className="flex items-center space-x-2 text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">
+              <span>Cars24 Inspection & Market Valuation</span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-black">{carDetails.title}</h1>
+            <h1 className="text-2xl md:text-3xl font-extrabold">{carDetails.title}</h1>
             <p className="text-xs text-blue-200 mt-1 flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5" /> {carDetails.location || selectedPreset.cityName}
+              <MapPin className="w-3.5 h-3.5 text-blue-400" /> {carDetails.location || selectedPreset.cityName}
               <span>•</span>
-              <span className="bg-blue-800/80 px-2 py-0.5 rounded text-[11px]">
+              <span className="bg-slate-800 px-2 py-0.5 rounded text-[11px]">
                 {carDetails.specs?.km} driven
               </span>
             </p>
@@ -291,9 +290,10 @@ const CarDetailsPage = () => {
 
           <button
             onClick={openLocationDrawer}
-            className="self-start md:self-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-bold transition-all flex items-center space-x-2"
+            className="self-start md:self-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center space-x-2"
           >
-            <span>{selectedPreset.icon} Region: {selectedPreset.cityName}</span>
+            <MapPin className="w-3.5 h-3.5 text-blue-400" />
+            <span>Region: {selectedPreset.cityName}</span>
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
@@ -306,25 +306,25 @@ const CarDetailsPage = () => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Gallery Card */}
-            <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <div className="relative aspect-video bg-gray-900">
                 <img
                   src={carDetails.images[0] || "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg"}
                   alt={carDetails.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                <div className="absolute top-4 left-4 bg-slate-900/80 text-white text-xs font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-green-400" />
                   140-Point Quality Inspected
                 </div>
               </div>
 
-              {/* Dynamic Pricing Banner */}
-              <div className="p-6 bg-gradient-to-br from-blue-50/80 via-white to-indigo-50/50 border-t border-blue-100">
+              {/* Pricing Banner */}
+              <div className="p-6 bg-blue-50/50 border-t border-blue-100">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <span className="inline-block px-2.5 py-1 rounded-full bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-wide mb-1">
-                      {pricingResult?.demandBadge || "🔥 Recommended Market Price"}
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-blue-600 text-white text-[11px] font-bold uppercase tracking-wide mb-1">
+                      {pricingResult?.demandBadge || "Recommended Market Price"}
                     </span>
                     <div className="flex items-baseline space-x-3">
                       <p className="text-3xl font-black text-blue-900">
@@ -341,9 +341,8 @@ const CarDetailsPage = () => {
 
                   <button
                     onClick={openLocationDrawer}
-                    className="px-3.5 py-2 bg-white border border-blue-200 text-blue-800 font-bold text-xs rounded-xl shadow-xs hover:bg-blue-50 transition-colors flex items-center space-x-1.5 shrink-0"
+                    className="px-3.5 py-2 bg-white border border-blue-200 text-blue-800 font-bold text-xs rounded-md shadow-xs hover:bg-blue-50 transition-colors flex items-center space-x-1.5 shrink-0"
                   >
-                    <TrendingUp className="w-4 h-4 text-blue-600" />
                     <span>View Market Factors</span>
                   </button>
                 </div>

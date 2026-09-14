@@ -99,26 +99,25 @@ const PricingForm: React.FC<PricingFormprop> = ({
         </p>
       </div>
 
-      {/* Dynamic Recommended Price Engine Banner Card */}
+      {/* Recommended Price Engine Banner Card */}
       {pricingResult && (
-        <div className="bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 text-white p-6 rounded-3xl shadow-md border border-blue-700/50 space-y-4">
+        <div className="bg-blue-600 text-white p-6 rounded-md shadow-sm border border-blue-700 space-y-4">
           <div className="flex items-center justify-between">
-            <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-500 text-white text-[11px] font-extrabold uppercase tracking-wide">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Recommended Market Price Engine</span>
+            <span className="inline-flex items-center px-3 py-1 rounded-md bg-orange-500 text-white text-[11px] font-bold uppercase tracking-wide">
+              <span>Recommended Market Price</span>
             </span>
-            <span className="text-xs text-blue-200 font-semibold">
+            <span className="text-xs text-blue-100 font-semibold">
               Region: {selectedPreset.cityName}
             </span>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <p className="text-xs text-blue-200 uppercase tracking-wider font-bold">Suggested Listing Value</p>
+              <p className="text-xs text-blue-100 uppercase tracking-wider font-bold">Suggested Listing Value</p>
               <p className="text-3xl font-black text-white mt-0.5">
                 ₹ {pricingResult.recommendedPrice.toLocaleString("en-IN")}
               </p>
-              <p className="text-xs text-orange-300 font-bold mt-1">
+              <p className="text-xs text-orange-200 font-bold mt-1">
                 {pricingResult.demandBadge}
               </p>
             </div>
@@ -126,7 +125,7 @@ const PricingForm: React.FC<PricingFormprop> = ({
             <button
               type="button"
               onClick={applyRecommendedPrice}
-              className="py-2.5 px-4 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl transition-all shadow-md active:scale-95 shrink-0"
+              className="py-2.5 px-4 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-md transition-colors shadow-sm shrink-0"
             >
               Use Recommended Price
             </button>
@@ -247,9 +246,9 @@ const PricingForm: React.FC<PricingFormprop> = ({
         <button
           type="submit"
           disabled={!isValid}
-          className={`px-6 py-3 rounded-xl text-xs font-extrabold shadow-md transition-all flex items-center space-x-2 ${
+          className={`px-6 py-3 rounded-md text-xs font-bold shadow-sm transition-colors flex items-center space-x-2 ${
             isValid
-              ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 active:scale-95"
+              ? "bg-blue-600 text-white hover:bg-blue-700"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
         >
