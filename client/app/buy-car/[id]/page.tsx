@@ -620,7 +620,7 @@ const CarDetailsPage = () => {
                       </div>
 
                       {/* Wallet Points Redemption Section */}
-                      <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 p-4 rounded-2xl border border-orange-200 space-y-3">
+                      <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 space-y-3">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <Wallet className="w-4 h-4 text-orange-600" />

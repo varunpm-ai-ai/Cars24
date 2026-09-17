@@ -344,7 +344,7 @@ export default function NotificationPreferencesPage() {
 
           {/* Right Column: Live Push Simulator / Test Station (1 col) */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-2xl shadow-xl p-6 border border-slate-800 relative overflow-hidden">
+            <div className="bg-slate-900 text-white rounded-xl p-6 border border-slate-800 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl" />
 
               <div className="flex items-center space-x-2 text-orange-400 font-bold text-sm mb-2">
