@@ -37,72 +37,94 @@ namespace server.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromQuery] string userId, [FromBody] Booking booking)
         {
-            if (booking == null || string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(booking.CarId))
-                return BadRequest(new { message = "UserId and CarId are required." });
-
-            var user = await _userService.GetByIdAsync(userId);
-            if (user == null)
-                return NotFound(new { message = "User not found." });
-
-            var car = await _carService.GetByIdAsync(booking.CarId);
-            decimal originalPrice = 0m;
-            if (car != null && !string.IsNullOrEmpty(car.Price))
+            try
             {
-                decimal.TryParse(car.Price.Replace(",", "").Replace("₹", "").Trim(), out originalPrice);
-            }
+                if (booking == null || string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(booking.CarId))
+                    return BadRequest(new { message = "UserId and CarId are required." });
 
-            booking.TenantId = string.IsNullOrEmpty(user.TenantId) ? "tenant-default" : user.TenantId;
+                var user = await _userService.GetByIdAsync(userId);
+                if (user == null)
+                    return NotFound(new { message = "User not found." });
 
-            // Handle points redemption if requested
-            if (booking.PointsRedeemed > 0)
-            {
-                var validation = await _walletService.ValidateRedemptionAsync(
-                    userId,
-                    booking.TenantId,
-                    booking.PointsRedeemed,
-                    originalPrice
-                );
-
-                if (!validation.IsValid)
+                Car? car = null;
+                try
                 {
-                    return BadRequest(new { message = validation.Message });
+                    car = await _carService.GetByIdAsync(booking.CarId);
+                }
+                catch (FormatException)
+                {
+                    car = null;
                 }
 
-                var redemption = await _walletService.DeductPointsAsync(
-                    userId,
-                    booking.TenantId,
-                    booking.PointsRedeemed,
-                    $"Redeemed {booking.PointsRedeemed} points for booking car '{car?.Title ?? booking.CarId}'",
-                    booking.CarId
-                );
-
-                if (!redemption.Success)
+                decimal originalPrice = 0m;
+                if (car != null && !string.IsNullOrEmpty(car.Price))
                 {
-                    return BadRequest(new { message = redemption.Message });
+                    decimal.TryParse(car.Price.Replace(",", "").Replace("₹", "").Trim(), out originalPrice);
                 }
 
-                booking.DiscountAmount = validation.DiscountAmount;
-                booking.FinalPrice = Math.Max(0, originalPrice - validation.DiscountAmount);
+                booking.TenantId = string.IsNullOrEmpty(user.TenantId) ? "tenant-default" : user.TenantId;
+
+                // Handle points redemption if requested
+                if (booking.PointsRedeemed > 0)
+                {
+                    var validation = await _walletService.ValidateRedemptionAsync(
+                        userId,
+                        booking.TenantId,
+                        booking.PointsRedeemed,
+                        originalPrice
+                    );
+
+                    if (!validation.IsValid)
+                    {
+                        return BadRequest(new { message = validation.Message });
+                    }
+
+                    var redemption = await _walletService.DeductPointsAsync(
+                        userId,
+                        booking.TenantId,
+                        booking.PointsRedeemed,
+                        $"Redeemed {booking.PointsRedeemed} points for booking car '{car?.Title ?? booking.CarId}'",
+                        booking.CarId
+                    );
+
+                    if (!redemption.Success)
+                    {
+                        return BadRequest(new { message = redemption.Message });
+                    }
+
+                    booking.DiscountAmount = validation.DiscountAmount;
+                    booking.FinalPrice = Math.Max(0, originalPrice - validation.DiscountAmount);
+                }
+                else
+                {
+                    booking.DiscountAmount = 0m;
+                    booking.FinalPrice = originalPrice;
+                }
+
+                await _bookingService.CreateAsync(booking);
+
+                if (user.BookingId == null)
+                {
+                    user.BookingId = new List<string>();
+                }
+                if (!string.IsNullOrEmpty(booking.Id))
+                {
+                    user.BookingId.Add(booking.Id);
+                }
+                await _userService.UpdateAsync(user.Id!, user);
+
+                // Reward referrer & referee for completing a purchase
+                if (!string.IsNullOrEmpty(booking.Id))
+                {
+                    await _referralService.ProcessPurchaseReferralRewardAsync(userId, booking.Id);
+                }
+
+                return Ok(booking);
             }
-            else
+            catch (Exception ex)
             {
-                booking.DiscountAmount = 0m;
-                booking.FinalPrice = originalPrice;
+                return StatusCode(500, new { message = ex.Message });
             }
-
-            await _bookingService.CreateAsync(booking);
-
-            if (user.BookingId == null)
-            {
-                user.BookingId = new List<string>();
-            }
-            user.BookingId.Add(booking.Id!);
-            await _userService.UpdateAsync(user.Id!, user);
-
-            // Reward referrer & referee for completing a purchase
-            await _referralService.ProcessPurchaseReferralRewardAsync(userId, booking.Id!);
-
-            return CreatedAtAction(nameof(GetbookingById), new { id = booking.Id }, booking);
         }
 
         [HttpGet("{id}")]
